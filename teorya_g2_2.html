@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+
+    <title>Информационная система «Анимация и спецэффекты в Blender»</title>
+    <link rel="shortcut icon" href="assets\images\icon_logo.png" type="image/png">
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+
+  </head>
+
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+      <!-- Main -->
+        <div id="main">
+          <div class="inner">
+
+            <!-- Header -->
+            <header id="header">
+               <!-- TABS -->
+              <div class="topnav">
+                <a href="index.html">Главная</a>
+                <a href="teorya_g2_2.html" class="active">Теория</a>
+                <a href="practik_g2_1.html">Практика</a>
+                <a href="test.html">Тестирование</a> 
+                <a href="ssilki.html">Полезные ссылки</a>
+            
+              </div>
+            
+			
+              <div class="logo">
+                <a href="index.html">Blender</a>
+                </header>
+
+<!-- контент -->
+<h3>Настройка света в Blender</h3>
+
+<p>Этот материал посвящён тому, как настроить свет во Viewport. Расскажу о технической стороне работы, дам несколько полезных советов о том, как облегчить процесс, а кроме того мы рассмотрим нюансы, связанные с подачей модели.
+</p>
+<h2>Работа во Viewport и технические ограничения</h2>
+<p>Работать мы будем в трёх окнах. Первое — рабочее, без рендера, где будут отображаться все камеры и источники света. Второе — уже знакомый нам Material Editor. И третье — своего рода наглядная демонстрация: в нём будет отображаться уже отрендеренная картинка с ракурса выбранной камеры.
+</p>
+<p><a href="https://st.renderu.com/image/414757" target="_blank"  rel="nofollow"><img src="https://st.renderu.com/image/1200x/414757" alt="1.png"></a><br>
+</p>
+<p style="text-align: center;">Для этого в правом углу окна в шейдинге viewport выбираем Rendered.
+</p>
+<p style="text-align: center;"><a href="https://st.renderu.com/image/414761" target="_blank"  rel="nofollow"><img src="https://st.renderu.com/image/1200x/414761" alt="1.2.png"></a>
+</p>
+<p>Для более быстрой итерации я обычно использую Eevee — рендер в реальном времени, который может работать в качестве финального рендера, либо в качестве движка, который управляет предпросмотром в реальном времени при создании объектов.<br>
+</p>
+<p>В нашей модели есть объекты с параметром volume. Это затрудняет работу, поскольку Eevee берёт bounding box, крайние точки по трём осям xyz, который и становится volume.
+</p>
+<p><a href="https://st.renderu.com/image/414758" target="_blank"  rel="nofollow"><img src="https://st.renderu.com/image/1200x/414758" alt="2.jpg"></a>
+</p>
+<p style="text-align: center;">Выглядит это так.
+</p>
+<p>В нашей модели есть объекты с параметром volume. Это затрудняет работу, поскольку Eevee берёт bounding box, крайние точки по трём осям xyz, который и становится volume. Исправить этот эффект можно, поменяв шейдеры с volume, например, на базовый Principled BSDF с обычным emissive у каждого иллиция. Но это потребует отдельной настройки материала под eevee, — если мы хотим, чтоб свечение было похоже на то, которое было настроено под cycles.<br><br>Поэтому оставляем Principled BSDF без свечения, с упрощенными материалами выставляем свет в eevee, и уже перед финальными рендерами будем переключаться на cycles для корректного отображения всех наших материалов и света. Заходим во вкладку Render Properties и выбираем Cycles.
+</p>
+<p><br>Здесь же назначаем девайс: CPU или GPU. Характеристики моего железа позволяют рендерить в CPU, что несколько медленнее, но обеспечивает более стабильную работу.<br>
+</p>
+<p>В этой же вкладке настраиваем количество сэмплов, которое можно установить отдельно для финального рендера и для вьюпорта.
+</p>
+<p><a href="https://st.renderu.com/image/414759" target="_blank"  rel="nofollow"><img src="https://st.renderu.com/image/1200x/414759" alt="3.jpg"></a><br>
+</p>
+<p>Ещё один важный момент — коллекции. Для удобства организации сцены создаём отдельную коллекцию, которая будет состоять из камеры и подобранных для конкретного ракурса источников света. Это позволит быстро переключаться между кадрами и не тратить время на то, чтобы вспомнить, какой сетап источников света за какой кадр отвечает.<br><br>Как это сделать: в панели Scenes Collection нажимаем New Collection. Теперь, если нажать значок “папка” перед названием, все новосозданные объекты автоматически будут помещаться в выбранную коллекцию.
+</p>
+<p><a href="https://st.renderu.com/image/414760" target="_blank"  rel="nofollow"><img src="https://st.renderu.com/image/1200x/414760" alt="4.jpg"></a><br>
+</p>
+<p>Также коллекции удобны тем, что мы можем в один клик отключить отображение целого сетапа во вьюпорте или на рендере (значки “глаз” и “камера” соответственно).
+</p>
+<p><a href="https://st.renderu.com/image/414787" target="_blank"  rel="nofollow"><img src="https://st.renderu.com/image/1200x/414787" alt="5.gif"></a><br>
+</p>
+<p><strong>Совет</strong>: если хотите сделать “предвизуализацию” освещения, лучше всего выставлять источники при нейтрально серых объектах. Это позволит избежать ситуаций, когда картинка пересвечена либо наоборот недостаточно освещена.
+</p>
+<h2><br>Настройка камеры</h2>
+<p>Переходим непосредственно к работе. В самом начале у нас есть объект, к которому можно создать плоскость с помощью уже знакомого хоткея “Shift+A”.
+</p>
+<p><a href="https://st.renderu.com/image/414762" target="_blank"  rel="nofollow"><img src="https://st.renderu.com/image/1200x/414762" alt="6.1.jpg"></a><br>
+</p>
+<p><a href="https://st.renderu.com/image/414765" target="_blank"  rel="nofollow"><img src="https://st.renderu.com/image/1200x/414765" alt="6.2.jpg"></a><br>
+</p>
+<p>Аналогичным образом создаём камеру. Чтобы настроить ракурс во втором окне, делаем её активной (жмём значок “камера” в панели справа), после чего над ней появляется чёрный треугольник — обозначение главной камеры.
+</p>
+<p><a href="https://st.renderu.com/image/414763" target="_blank"  rel="nofollow"><img src="https://st.renderu.com/image/1200x/414763" alt="7.1.jpg"></a><br>
+</p>
+<p><a href="https://st.renderu.com/image/414764" target="_blank"  rel="nofollow"><img src="https://st.renderu.com/image/1200x/414764" alt="7.2.jpg"></a><br>
+</p>
+<p><a href="https://st.renderu.com/image/414766" target="_blank"  rel="nofollow"><img src="https://st.renderu.com/image/1200x/414766" alt="7.3.jpg"></a><br>
+</p>
+<p>Теперь жмём “0” на нампаде и смотрим через выбранную камеру. При этом, если мы попробуем сдвинуться, камера останется на месте. Чтобы менять ракурс камеры, а не своё положение, нажимаем N и выбираем в открывшейся вкладке View — Lock Camera to View. После этого рамка, которая определяет кадр подсвечивается красным пунктиром, и мы можем двигаться “изнутри” камеры. Выставляем таким образом нужный ракурс.
+</p>
+<p><a href="https://st.renderu.com/image/414767" target="_blank"  rel="nofollow"><img src="https://st.renderu.com/image/1200x/414767" alt="8.1.jpg"></a><br>
+</p>
+<p><a href="https://st.renderu.com/image/414768" target="_blank"  rel="nofollow"><img src="https://st.renderu.com/image/1200x/414768" alt="8.2.jpg"></a><br>
+</p>
+<p><a href="https://st.renderu.com/image/414769" target="_blank"  rel="nofollow"><img src="https://st.renderu.com/image/1200x/414769" alt="8.3.jpg"></a><br>
+</p>
+<p>Закончив, снимаем галочку с Lock Camera to View. Камера выставлена. Теперь, чтобы во втором окошке отображался ракурс именно этой камеры, нажимаем на него и снова “0”.
+</p>
+<p><a href="https://st.renderu.com/image/414794" target="_blank"  rel="nofollow"><img src="https://st.renderu.com/image/1200x/414794" alt="9.gif"></a><br>
+</p>
+<h2>Настройка источников света</h2>
+<p>Таким же образом (“Shift+A”) создаём источники света. Их у нас 4 вида на выбор:<br><br><strong>Point </strong>— свет этого источника распространяется из одной точки равномерно во все стороны, с постепенным затуханием.<br><br><strong>Sun </strong>— источник направленного света с параллельными лучами, без затухания.
+</p>
+<p><a href="https://st.renderu.com/image/415258" target="_blank"  rel="nofollow"><img src="https://st.renderu.com/image/1200x/415258" alt="1.png"></a><br><strong>Spot</strong> — источник , излучающий свет из одной точки, но область свечения ограничена направленным конусом, который мы можем настраивать.
+</p>
+<p><br><strong>Area</strong> — источник света, при использовании которого излучение происходит из плоскости, форму и размер которой мы можем настраивать.
+</p>
+<p><a href="https://st.renderu.com/image/415259" target="_blank"  rel="nofollow"><img src="https://st.renderu.com/image/1200x/415259" alt="2.png"></a><br>
+</p>
+<p>Итак, создаём Spot, который автоматически добавляется в активную коллекцию. Изменяем положение источника света относительно модели, выбрав его мышью и нажав хоткей G для перемещения
+</p>
+<p><a href="https://st.renderu.com/image/414771" target="_blank"  rel="nofollow"><img src="https://st.renderu.com/image/1200x/414771" alt="10.1.jpg"></a><br>
+</p>
+<p><a href="https://st.renderu.com/image/414770" target="_blank"  rel="nofollow"><img src="https://st.renderu.com/image/1200x/414770" alt="10.2.jpg"></a><br>
+</p>
+<p><a href="https://st.renderu.com/image/414776" target="_blank"  rel="nofollow"><img src="https://st.renderu.com/image/1200x/414776" alt="10.3.jpg"></a><br>
+</p>
+<p>Переходим во вкладку настройка света (значок “зелёная лампочка”). Здесь мы можем выбрать цвет и интенсивность света. По умолчанию значение последнего параметра (Power) — “10W”. Назначаем “1500W” и тут же видим в окошке, как это будет выглядеть на рендере.
+</p>
+<p><a href="https://st.renderu.com/image/414773" target="_blank"  rel="nofollow"><img src="https://st.renderu.com/image/1200x/414773" alt="11.1.jpg" width="1144" height="623" style="width: 1144px; height: 623px;"></a><br>
+</p>
+<p><a href="https://st.renderu.com/image/414775" target="_blank"  rel="nofollow"><img src="https://st.renderu.com/image/1200x/414775" alt="11.2.jpg"></a><br>
+</p>
+<p>Ещё один параметр источника света, который мы можем настраивать, — размер (в случае Spot). Чем он больше, тем мягче падающие тени. Следовательно, если мы хотим получить супержёсткие тени с чётким контуром, ставим значение «0».<a href="https://st.renderu.com/image/414774" target="_blank"  rel="nofollow"><img src="https://st.renderu.com/image/1200x/414774" alt="12.1.jpg"></a><br>
+</p>
+<p><a href="https://st.renderu.com/image/414778" target="_blank"  rel="nofollow"><img src="https://st.renderu.com/image/1200x/414778" alt="12.2.jpg"></a><br>
+</p>
+<p><a href="https://st.renderu.com/image/414779" target="_blank"  rel="nofollow"><img src="https://st.renderu.com/image/1200x/414779" alt="12.3.jpg"></a><br>
+</p>
+<p>На отображение теней в Eevee также влияет количество сэмплов. Из-за того, что у нас во Viewport стоит значение “16”, мягкие тени разбиваются на отдельные части. Чтобы это исправить, поднимаем значение. Однако, в этом случае мы несколько жертвуем производительностью, и скорость рендера замедляется.<br><br>В качестве примера, — скрин отображения при 256 сэмплах.
+</p>
+<p><a href="https://st.renderu.com/image/414777" target="_blank"  rel="nofollow"><img src="https://st.renderu.com/image/1200x/414777" alt="13.jpg"></a><br>
+</p>
+<p>Как я уже говорил, в случае Spot и Area можно выбрать направление источника света. Чтобы изменить угол падения света, зажимаем жёлтую точку либо хоткей “Shift+T”. А взаимодействуя со стрелкой можно отрегулировать угол фонарика.
+</p>
+<p><a href="https://st.renderu.com/image/414795" target="_blank"  rel="nofollow"><img src="https://st.renderu.com/image/1200x/414795" alt="14.gif"></a><br>
+</p>
+<p>Таким образом можно, например, сконцентрировать свет на конкретной части тела, чтобы сделать акцент.
+</p>
+<p><a href="https://st.renderu.com/image/414781" target="_blank"  rel="nofollow"><img src="https://st.renderu.com/image/1200x/414781" alt="15.jpg"></a><br>
+</p>
+<p>Кроме того, мы можем настроить край воздействия света и градиент от области максимальной интенсивности света к полностью чёрному. Чем больше значение Blend в настройках источника света, тем более плавным будет переход.
+</p>
+<p><a href="https://st.renderu.com/image/414783" target="_blank"  rel="nofollow"><img src="https://st.renderu.com/image/1200x/414783" alt="16.jpg"></a><br>
+</p>
+<p>Говоря об Area, отметим один из параметров источника — габариты. Здесь мы можем выбрать форму источника: квадрат, прямоугольник, диск либо эллипс. Диск и квадрат имеют один параметр для изменения — радиус и сторону, соответственно. Прямоугольник — длину и ширину.
+</p>
+<p><br>После того, как прикинули в Eevee базовое расположение источников, переключаемся в Cycles, чтобы получить более приближенную к итоговому рендеру картинку.
+</p>
+<p><a href="https://st.renderu.com/image/414780" target="_blank"  rel="nofollow"><img src="https://st.renderu.com/image/1200x/414780" alt="17.1.jpg"></a><br>
+</p>
+<p><a href="https://st.renderu.com/image/414786" target="_blank"  rel="nofollow"><img src="https://st.renderu.com/image/1200x/414786" alt="17.2.jpg"></a><br>
+</p>
+<h2>Как выставить свет</h2>
+<p>Теперь поговорим о принципах, в соответствии с которыми выставляется свет. И здесь большую роль играет определение задачи: должна ли модель максимально отражать наш навык или же перед нами стоит цель поставить сцену так, чтобы чётко считывалось настроение.<br><br>В зависимости от этого выделим условные 2 вида:<br><br>1. <strong>«Недраматичная»</strong> или <strong>скульптурная подача</strong> — когда нам нужно показать хорошо считываемые формы и детали.<br><br>В этом случае мы берём в качестве основного источника Area, выставляем значение Size “5м”. Получаем эффект, схожий с освещением в пасмурную погоду: равномерное освещение, мягкие тени, плавный переход от света в тень.
+</p>
+<p><a href="https://st.renderu.com/image/414782" target="_blank"  rel="nofollow"><img src="https://st.renderu.com/image/1200x/414782" alt="18.jpg"></a><br>
+</p>
+<p><strong>Важно:</strong> чем больше угол между направлением «взгляда» камеры и направлением света, тем лучше считываются детали. В противном случае они «съедаются», и мы получаем эффект «лобовой вспышки».
+</p>
+<p><a href="https://st.renderu.com/image/414788" target="_blank"  rel="nofollow"><img src="https://st.renderu.com/image/1200x/414788" alt="19.jpg"></a><br>
+</p>
+<p>Помимо основного источника мягкого света, можно также использовать дополнительный, который будет расположен за объектом либо вне кадра, подсвечивая саму тень. Таким образом удаётся подчеркнуть детали и выставить “студийный” свет.<br><br>Я предпочитаю пользоваться минимумом источников, но при желании можно добавить и третий — дело вкуса. Главное — не переборщить и избежать засвета модели со всех сторон, иначе мы потеряем ощущение объёма модели.
+</p>
+<p><a href="https://st.renderu.com/image/414784" target="_blank"  rel="nofollow"><img src="https://st.renderu.com/image/1200x/414784" alt="20.jpg"></a><br>
+</p>
+<p><strong>Совет</strong>: не забываем о свете, который отражает «пол». Порой достаточно лишь изменить его тон, чтобы добавить или убрать рефлексы.
+</p>
+<p><br>Вот так выглядит готовый turntable со скульптурной подачей:
+</p>
+<p><a href="https://st.renderu.com/image/414785" target="_blank"  rel="nofollow"><img src="https://st.renderu.com/image/1200x/414785" alt="21.jpg"></a>
+</p>
+<p>2. <strong>“Драматичная”</strong> подача — противоположна скульптурной и предполагает, что мы готовы пожертвовать некоторым уровнем детализации ради достижения эмоционального эффекта.<br><br>Чем больше контраст между светом и тенью, тем большей “драматичностью” обладает кадр.
+</p>
+<p><a href="https://st.renderu.com/image/414793" target="_blank"  rel="nofollow"><img src="https://st.renderu.com/image/1200x/414793" alt="22.jpg"></a><br>
+</p>
+<p style="text-align: center;">Добиться максимального эффекта можно, расположив источник света за объектом напротив направления взгляда камеры.
+</p>
+<p>Ниже — наглядный пример. Эти сетапы я рассматривал в процессе работы.
+</p>
+<p><a href="https://st.renderu.com/image/414796" target="_blank"  rel="nofollow"><img src="https://st.renderu.com/image/1200x/414796" alt="23.gif"></a><br>
+</p>
+<p>В конечном итоге я хотел добиться ощущения случайной фотографии, поэтому подал модель в “драме”: жёсткие тени, источник света расположен не намного левее камеры, чтобы отчасти сохранить детализацию и в то же время создать эффект вспышки камеры. Общее настроение кадра: тревога от встречи с монстром в темноте, ощущение неизвестности и напряжение.<br><br>Так выглядит наш кадр уже после рендера и обработки. О них поговорим в следующий раз.
+</p>
+<p><a href="https://st.renderu.com/image/414789" target="_blank"  rel="nofollow"><img src="https://st.renderu.com/image/1200x/414789" alt="24.jpg"></a><br>
+</p>
+
+
+<br>
+  <a href="teorya_g2_1.html" > <button> Предыдущая страница</button></a><div class="right"><a href="teorya_g3_1.html"><button>Следующая страницы </button></a></div>             
+</div>
+</div>
+
+            
+      <!-- Sidebar -->
+        <div id="sidebar">
+
+          <div class="inner">
+
+            <!-- Search Box -->
+            <section id="search" class="alt">
+              <form method="get" action="#">
+                <input type="text" name="search" id="search" placeholder="Поиск..." />
+              </form>
+            </section>
+              
+                       <!-- Menu -->
+                       <nav id="menu">
+                        <ul>
+                          <li>
+                          <span class="opener">Глава 1 <br>«Знакомство с анимацией в Blender»</span>
+                           <ul class="submenu">
+                            <li><a href="teorya.html" >Устройство Blender 3D  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g1_2.html">Горячие клавиши в Blender  <input type="checkbox"/></a></li>                          
+                            <li><a href="teorya_g1_3.html">Виды анимации  <input type="checkbox"/></a></li> 
+                            <li><a href="teorya_g1_4.html">Как делать анимацию в Blender  <input type="checkbox"/></a></li> 
+                            <li><a href="teorya_g1_5.html">Анимация с помощью ключевых кадров и интерполяция  <input type="checkbox"/></a></li> 
+                            <li><a href="teorya_g1_6.html">Аниация с помощью драйверов  <input type="checkbox"/></a></li> 
+                            <li><a href="teorya_g1_7.html">Рендеринг и экспорт  <input type="checkbox"/></a></li>
+                          </ul>
+                          </li>
+                          
+                            <span class="opener">Глава 2<br> «Камеры и освещение»</span>
+                            <ul class="submenu">
+                              <li><a href="teorya_g2_1.html">Управление камерой в Blender  <input type="checkbox"/></a></li>
+                              <li><a href="teorya_g2_2.html">Настройка света в Blender <input type="checkbox"/></a></li>
+                            </ul>
+                          </li>
+                          <li>
+                          <span class="opener">Глава 3<br> «Простейшая анимация в Blender»</span>
+                          <ul>
+                              <li><a href="teorya_g3_1.html">Принципы анимации в Blender <input type="checkbox"/></a></li>
+                              <li><a href="teorya_g3_1.html">Основы анимации в Blender <input type="checkbox"/></a></li>                             
+                          </ul>
+                        </li>
+                        <li>
+                          <span class="opener">Глава 4 <br>«Физика в Blender»</span>
+                          <ul>
+                            <li><a href="teorya_g4_1.html">Физика в Blender  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g4_2.html">Rigid Body - твердое тело <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g4_3.html">Cloth - ткань  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g4_4.html">Soft Body - мягкое тело  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g4_5.html">Fluid - жидкость  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g4_6.html">Dynamic Paint - динамическая кисть  <input type="checkbox"/></a></li>
+                          </ul>
+                        </li>
+                        <li>
+                          <span class="opener">Глава 5<br> «Система частиц»</span>
+                          <ul>
+                            <li><a href="teorya_g5_1.html">Система частиц общая информация  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g5_2.html">Emitter <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g5_3.html">Hair  <input type="checkbox"/></a></li>
+                          </ul>
+                        </li>
+                        <li>
+                          <span class="opener">Глава 6 <br>«2D-анимация и Моушн-графика»</span>
+                          <ul>
+                            <li><a href="teorya_g6_1.html">2D-анимация: принципы  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g6_2.html">Моушн-графика  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g6_3.html">Моушн-графика в Blender (примеры работ) <input type="checkbox"/></a></li>
+
+                          </ul>
+                        </li>
+                        <li>
+                          <span class="opener">Глава 7 <br>«Анимация и спецэффекты текста» </span>
+                          <ul>
+                            <li><a href="teorya_g7_1.html">Текст в Blender  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g7_2.html">Основные типы анимации текста  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g7_3.html">Примеры анимации текста <input type="checkbox"/></a></li>
+                          </ul>
+                        </li>
+                        <li>
+                          <span class="opener">Глава 8<br> «Модификаторы, аддоны и ноды»</span>
+                          <ul>
+                            <li><a href="teorya_g8_1.html">Модификаторы в Blender  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g8_2.html">Аддоны в Blender  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g8_3.html">Ноды в Blender   <input type="checkbox"/></a></li>
+                          </ul>
+                        </li>
+                        <li> 
+                          <span class="opener">Глава 9<br> «Персонажная анимация»</span>
+                          <ul>
+                            <li><a href="teorya_g9_1.html">Риггинг в Blender  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g9_2.html">Прямая и обратная кинематика  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g9_3.html">Адон Rigify  <input type="checkbox"/></a></li>                          
+                          </ul>
+                        </li>
+                        <li>
+                          <span class="opener">Глава 10<br> «Трекинг в Blender»</span>
+                          <ul>
+                            <li><a href="teorya_g10_1.html">Motion tracking  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g10_2.html">Примеры создания VFX эффектов в Blender  <input type="checkbox"/></a></li>
+                          </ul>
+                        </li>
+                        </nav>
+  <a href="https://www.nntu.ru/structure/view/podrazdeleniya/kafedra-graficheskie-informacionnye-sistemy"> <br>© Кафедра ГИС <br> НГТУ им. Р.Е. Алексеева</a> 
+</div>
+
+    <!-- Back to top -->
+    <div class='back-to-top' id='back-to-top' title='Back to top'><i class='fa fa-chevron-up' ></div>
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/transition.js"></script>
+    <script src="assets/js/owl-carousel.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script src="assets/js/back-to-top.js"></script>
+</body>
+
+
+</html>

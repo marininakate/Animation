@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+
+    <title>Информационная система «Анимация и спецэффекты в Blender»</title>
+    <link rel="shortcut icon" href="assets\images\icon_logo.png" type="image/png">
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+
+  </head>
+
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+      <!-- Main -->
+        <div id="main">
+          <div class="inner">
+
+            <!-- Header -->
+            <header id="header">
+               <!-- TABS -->
+              <div class="topnav">
+                <a href="index.html">Главная</a>
+                <a href="teorya_g2_1.html" class="active">Теория</a>
+                <a href="practik_g2_1.html">Практика</a>
+                <a href="test.html">Тестирование</a> 
+                <a href="ssilki.html">Полезные ссылки</a>
+            
+              </div>
+            
+			
+              <div class="logo">
+                <a href="index.html">Blender</a>
+                </header>
+
+            <!-- контент -->
+            <h3>Управление камерой в Blender</h3>
+<br>
+ <div class="kontent"><figure><img src="assets\images\Глава2\Теория\2_1\1.jpg" alt="1"></figure></div>
+ <br>
+ <h3>Как планировать сцены и настраивать камеру</h3>
+<br>
+ <p>
+  Прежде чем начать работу с камерой, важно спланировать композицию сцены. Оптимальный вариант — создать раскадровку ролика. Определить, какие элементы будут находиться в кадре, как они будут расположены относительно камеры, какая будет у камеры траектория, какие объекты в кадре будут двигаться, а какие останутся статичными.   
+ </p>
+ <p>
+  Если вы когда-нибудь присутствовали на съемочной площадке, знаете, как долго и тщательно режиссер и оператор выставляют кадр, композицию и свет. После того как всё выставят, делают тестовые проезды камеры и только после этого на площадку выходят актеры. По сути, мы с вами выступаем в роли режиссеров и операторов, только в 3D-софте. 
+ </p>
+ <p>
+  С теорией покончено, давайте откроем программу и приступим к созданию камеры в сцене. Всего несколько шагов нас отделяет от крутой и динамичной анимации камеры.
+ </p>
+ <br>
+ <h2>Шаг 1. Создаем камеру</h2>
+<br>
+ <p>
+  1. Выберите место, где вы хотите разместить камеру в сцене.<br>
+2. Нажмите Shift + A, чтобы вызвать меню добавления объектов.<br>
+3. Выберите Camera из списка объектов.
+ </p>
+ <div class="kontent"><figure><img src="assets\images\Глава2\Теория\2_1\2.jpg" alt="1"></figure></div>
+ <br>
+ <h2>Шаг 2. Настраиваем камеру</h2>
+<br>
+ <p>
+  Переходим к настройкам камеры. Выбираем размер кадра: для горизонтального видео это обычно 1920×1080, количество кадров в секунду — Frame Rate.
+ </p>
+ <div class="kontent"><figure><img src="assets\images\Глава2\Теория\2_1\3.jpg" alt="1"></figure></div>
+ <br>
+ <h2>Шаг 3. Настраиваем фокусное расстояние</h2>
+<br>
+ <p>
+  Переходим во вкладку Data и настраиваем Focal Length.
+ </p>
+ <div class="kontent"><figure><img src="assets\images\Глава2\Теория\2_1\4.jpg" alt="1"></figure></div>
+<p>
+  Фокусное расстояние (Focal Length) — это параметр камеры, который определяет, насколько близким или далеким кажется объект на снимке. Короткое фокусное расстояние позволяет снимать широкие сцены, а длинное — делает объекты крупными и сфокусированными на заднем плане.
+</p>
+<p>Сравниваем фокусное расстояние — focal length 1</p>
+<div class="kontent"><figure><img src="assets\images\Глава2\Теория\2_1\5.jpg" alt="1"></figure></div>
+<p>Сравниваем фокусное расстояние — focal length 2</p>
+<div class="kontent"><figure><img src="assets\images\Глава2\Теория\2_1\6.jpg" alt="1"></figure></div>
+
+<p>Вот пример с фотографией, чтобы стало понятно, что Focal Length не работает как зум — этот параметр искажает пространство.</p>
+<div class="kontent"><figure><img src="assets\images\Глава2\Теория\2_1\7.jpg" alt="1"></figure></div>
+<p>
+  Если захотелось узнать, как правильно подбирать фокусное расстояние в своих роликах, пишите в комментариях.
+</p>
+ <br>
+ <h3>Как перемещать камеру</h3>
+<br>
+<p>Сначала заходим в режим просмотра. Для этого нажимаем 0 на Numpad. Так же выходим из режима камеры. Перемещать камеру можно несколькими способами.</p>
+ <p>Первый способ — использовать панель инструментов.</p>
+ <div class="kontent"><figure><img src="assets\images\Глава2\Теория\2_1\8.jpg" alt="1"></figure></div>
+ <p>
+  Перемещаем ползунок осей XYZ, чтобы перемещаться в пространстве. Перемещаем ползунок вращения, чтобы вращать камеру.
+ </p>           
+ <p>
+  Можно использовать горячие клавиши. При нажатии клавиши G + X/Y/Z можем перемещаться по определенной оси. При нажатии клавиши R можем вращать камеру.  При нажатии клавиши R + X/Y/Z можем вращать камеру по определенной оси.
+ </p>
+ <p>Переходим в режим камеры. Сверху во вкладке Orientation меняем параметр Global на Local.</p>
+            <div class="kontent"><figure><img src="assets\images\Глава2\Теория\2_1\9.jpg" alt="1"></figure></div>
+            <p>Нажимаем клавишу G и перемещаемся с помощью движения мыши или тачпада.</p>
+            <div class="kontent"><figure><img src="assets\images\Глава2\Теория\2_1\9.gif" alt="1"></figure></div>
+            <br>
+            <h3>Какие есть техники анимации камеры</h3>
+<br>
+            <p>В Blender есть несколько способов анимировать камеру.</p>
+
+            <br>
+            <h3>Ключевые кадры</h3><br>
+            <p>Один из таких способов — выбрать ключевые кадры.</p>
+            <br>
+            <h2>Шаг 1. Создаем ключи</h2>
+<br>
+            <p>Чтобы сделать анимацию камеры, воспользуемся ключевыми кадрами на таймлайне. По умолчанию панель таймлайна находится внизу. Выбираем необходимый кадр и нажимаем клавишу I. Появляется панель, где выбираем, на какой параметр ставим ключ.</p>
+            <div class="kontent"><figure><img src="assets\images\Глава2\Теория\2_1\10.jpg" alt="1"></figure></div>
+            <p>Перемещаемся вперед по таймлайну, ставим ключи анимации. Нажимаем пробел, чтобы проиграть анимацию.</p>
+            <div class="kontent"><figure><img src="assets\images\Глава2\Теория\2_1\11.gif" alt="1"></figure></div>
+            <br>
+            <h2>Шаг 2. Настраиваем графики анимации</h2>
+<br>
+            <p>Чтобы сделать анимацию более плавной, используем Graph Editor. Нажимаем на кнопку в левом углу и выбираем Graph Editor.</p>
+            <div class="kontent"><figure><img src="assets\images\Глава2\Теория\2_1\11.jpg" alt="1"></figure></div>
+            <p>Переходим в режим редактирования графиков. Можно настраивать все графики одновременно.</p>
+            <div class="kontent"><figure><img src="assets\images\Глава2\Теория\2_1\12.jpg" alt="1"></figure></div>
+            <p>Или каждый параметр по отдельности.</p>
+            <div class="kontent"><figure><img src="assets\images\Глава2\Теория\2_1\13.jpg" alt="1"></figure></div>
+            <br>
+            <h3>Пути движения</h3>
+<br>
+            <p>Вы можете создавать пути движения для камеры, чтобы она перемещалась по определенному маршруту.</p>
+<br>
+            <h2>Шаг 1. Создаем пути движения</h2><br>
+            <p>Создаем путь, по которому будет двигаться камера. Это может быть кривая Безье, я выбрал окружность.</p>
+            <div class="kontent"><figure><img src="assets\images\Глава2\Теория\2_1\14.jpg" alt="1"></figure></div>
+            <p>Переходим в вид сверху, увеличиваем радиус окружности и ставим камеру точно на окружность.</p>
+            <div class="kontent"><figure><img src="assets\images\Глава2\Теория\2_1\15.jpg" alt="1"></figure></div>
+            <h2>Шаг 2. Соединяем камеру и путь движения</h2><br>
+            <p>Создаем иерархию зависимости. Соединяем камеру и окружность. Главное — соблюдать порядок. <strong>Камера</strong> движется по <strong>окружности.</strong> С зажатым Ctrl выбираем<strong> камеру,</strong> затем <strong>окружность.</strong></p>
+            <div class="kontent"><figure><img src="assets\images\Глава2\Теория\2_1\16.jpg" alt="1"></figure></div>
+            <p>Нажимаем Ctrl + P, выбираем Follow Path.</p>
+            <div class="kontent"><figure><img src="assets\images\Глава2\Теория\2_1\17.jpg" alt="1"></figure></div>
+            <p>Получилось привязать камеру к траектории. Теперь нужно указать точку, на которую будет направлен объектив камеры.</p>
+            <br>
+            <h2>Шаг 3. Создаем точку слежения</h2>
+<br>
+            <p><strong>Add — Empty — Plain axis</strong>.</p>
+            <div class="kontent"><figure><img src="assets\images\Глава2\Теория\2_1\18.jpg" alt="1"></figure></div>
+            <p>Главное — расположить точку в том месте, за которым камера должна следить на всем пути передвижения. В моем случае это центр тела персонажа.</p>
+            <p>Заходим во вкладку Constraint, выбираем параметр Track To.</p>
+            <div class="kontent"><figure><img src="assets\images\Глава2\Теория\2_1\19.jpg" alt="1"></figure></div>
+            <p>В параметре Target выбираем <strong>Empty</strong>.</p>
+            <div class="kontent"><figure><img src="assets\images\Глава2\Теория\2_1\20.jpg" alt="1"></figure></div>
+            <p>Запускаем анимацию.</p>
+            <div class="kontent"><figure><img src="assets\images\Глава2\Теория\2_1\21.gif" alt="1"></figure></div>      
+
+            <br><br>
+            <h2>Главное об управлении камерой в Blender</h2>
+            <br>
+            <p>Управление камерой в Blender — важный аспект создания трехмерной графики и анимации. Путем планирования, анимации и использования продвинутых методов работы с камерой вы сможете создавать качественные и красивые сцены. Не бойтесь экспериментировать и искать новые способы использования камеры для достижения желаемых результатов.</p>         
+            <p>Как планировать сцену и настраивать камеру в Blender:</p>
+            <ol>
+            <li>Продумываем композицию и создаем сцену.&nbsp;</li>
+            <li>Добавляем камеру.</li>                  
+            <li>Настраиваем ракурс</a>, фокусное расстояние, положение камеры.</li>
+            <li>Создаем анимацию камеры по ключам или траектории.</li>
+            <br>
+            <div class="right"><a href="teorya_g2_2.html"><button>Следующая страницы </button></a></div>             
+          </div>
+          </div>
+
+            
+      <!-- Sidebar -->
+        <div id="sidebar">
+
+          <div class="inner">
+
+            <!-- Search Box -->
+            <section id="search" class="alt">
+              <form method="get" action="#">
+                <input type="text" name="search" id="search" placeholder="Поиск..." />
+              </form>
+            </section>
+              
+                       <!-- Menu -->
+                       <nav id="menu">
+                        <ul>
+                          <li>
+                          <span class="opener">Глава 1 <br>«Знакомство с анимацией в Blender»</span>
+                           <ul class="submenu">
+                            <li><a href="teorya.html" >Устройство Blender 3D  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g1_2.html">Горячие клавиши в Blender  <input type="checkbox"/></a></li>                          
+                            <li><a href="teorya_g1_3.html">Виды анимации  <input type="checkbox"/></a></li> 
+                            <li><a href="teorya_g1_4.html">Как делать анимацию в Blender  <input type="checkbox"/></a></li> 
+                            <li><a href="teorya_g1_5.html">Анимация с помощью ключевых кадров и интерполяция  <input type="checkbox"/></a></li> 
+                            <li><a href="teorya_g1_6.html">Аниация с помощью драйверов  <input type="checkbox"/></a></li> 
+                            <li><a href="teorya_g1_7.html">Рендеринг и экспорт  <input type="checkbox"/></a></li>
+                          </ul>
+                          </li>
+                         
+                            <span class="opener">Глава 2<br> «Камеры и освещение»</span>
+                            <ul class="submenu">
+                              <li><a href="teorya_g2_1.html">Управление камерой в Blender  <input type="checkbox"/></a></li>
+                              <li><a href="teorya_g2_2.html">Настройка света в Blender <input type="checkbox"/></a></li>
+                            </ul>
+                          </li>
+                          <li>
+                          <span class="opener">Глава 3<br> «Простейшая анимация в Blender»</span>
+                          <ul>
+                              <li><a href="teorya_g3_1.html">Принципы анимации в Blender <input type="checkbox"/></a></li>
+                              <li><a href="teorya_g3_1.html">Основы анимации в Blender <input type="checkbox"/></a></li>                             
+                          </ul>
+                        </li>
+                        <li>
+                          <span class="opener">Глава 4 <br>«Физика в Blender»</span>
+                          <ul>
+                            <li><a href="teorya_g4_1.html">Физика в Blender  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g4_2.html">Rigid Body - твердое тело <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g4_3.html">Cloth - ткань  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g4_4.html">Soft Body - мягкое тело  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g4_5.html">Fluid - жидкость  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g4_6.html">Dynamic Paint - динамическая кисть  <input type="checkbox"/></a></li>
+                          </ul>
+                        </li>
+                        <li>
+                          <span class="opener">Глава 5<br> «Система частиц»</span>
+                          <ul>
+                            <li><a href="teorya_g5_1.html">Система частиц общая информация  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g5_2.html">Emitter <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g5_3.html">Hair  <input type="checkbox"/></a></li>
+                          </ul>
+                        </li>
+                        <li>
+                          <span class="opener">Глава 6 <br>«2D-анимация и Моушн-графика»</span>
+                          <ul>
+                            <li><a href="teorya_g6_1.html">2D-анимация: принципы  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g6_2.html">Моушн-графика  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g6_3.html">Моушн-графика в Blender (примеры работ) <input type="checkbox"/></a></li>
+
+                          </ul>
+                        </li>
+                        <li>
+                          <span class="opener">Глава 7 <br>«Анимация и спецэффекты текста» </span>
+                          <ul>
+                            <li><a href="teorya_g7_1.html">Текст в Blender  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g7_2.html">Основные типы анимации текста  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g7_3.html">Примеры анимации текста <input type="checkbox"/></a></li>
+                          </ul>
+                        </li>
+                        <li>
+                          <span class="opener">Глава 8<br> «Модификаторы, аддоны и ноды»</span>
+                          <ul>
+                            <li><a href="teorya_g8_1.html">Модификаторы в Blender  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g8_2.html">Аддоны в Blender  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g8_3.html">Ноды в Blender   <input type="checkbox"/></a></li>
+                          </ul>
+                        </li>
+                        <li> 
+                          <span class="opener">Глава 9<br> «Персонажная анимация»</span>
+                          <ul>
+                            <li><a href="teorya_g9_1.html">Риггинг в Blender  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g9_2.html">Прямая и обратная кинематика  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g9_3.html">Адон Rigify  <input type="checkbox"/></a></li>                         
+                          </ul>
+                        </li>
+                        <li>
+                          <span class="opener">Глава 10<br> «Трекинг в Blender»</span>
+                          <ul>
+                            <li><a href="teorya_g10_1.html">Motion tracking  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g10_2.html">Примеры создания VFX эффектов в Blender  <input type="checkbox"/></a></li>
+                          </ul>
+                        </li>
+                        </nav>
+  <a href="https://www.nntu.ru/structure/view/podrazdeleniya/kafedra-graficheskie-informacionnye-sistemy"> <br>© Кафедра ГИС <br> НГТУ им. Р.Е. Алексеева</a> 
+</div>
+
+    <!-- Back to top -->
+    <div class='back-to-top' id='back-to-top' title='Back to top'><i class='fa fa-chevron-up' ></div>
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/transition.js"></script>
+    <script src="assets/js/owl-carousel.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script src="assets/js/back-to-top.js"></script>
+</body>
+
+
+</html>

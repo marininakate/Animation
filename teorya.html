@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+
+    <title>Информационная система «Анимация и спецэффекты в Blender»</title>
+    <link rel="shortcut icon" href="assets\images\icon_logo.png" type="image/png">
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+
+  </head>
+
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+      <!-- Main -->
+        <div id="main">
+          <div class="inner">
+
+            <!-- Header -->
+            <header id="header">
+               <!-- TABS -->
+              <div class="topnav">
+                <a href="index.html">Главная</a>
+                <a href="teorya.html" class="active">Теория</a>
+                <a href="practik_g1_1.html">Практика</a>
+                <a href="test.html">Тестирование</a> 
+                <a href="ssilki.html">Полезные ссылки</a>
+            
+              </div>
+            
+			
+              <div class="logo">
+                <a href="index.html">Blender</a>
+                </header>
+
+            <!-- контент -->
+            <h3>Устройство Blender 3D</h3>
+            <p> 
+              Так выглядит интерфейс Blender 3D, как только вы ее открываете:
+            </p>
+            <div class="kontent">  
+            <figure><img src="assets\images\Глава1\Теория\1_1\1.png" alt="1"></figure>
+            </div>
+            <br>
+            <h2>
+              Интерфейс Blender
+            </h2>
+            <p>
+             <b>1. Основная рабочая область</b>  — это область трехмерного просмотра, в которой будет располагаться 3D-объект.
+            </p>
+            <p>
+              <b>2. Панель настроек справа</b>  — в ней расположены иконки, с помощью которых можно выбрать нужный инструмент.
+             </p>
+             <p>
+              <b>3. Панель инструментов слева </b>  — это область трехмерного просмотра, в которой будет располагаться 3D-объект.
+             </p>
+             <p>
+              <b>4. Таймлайн  </b>  — временная шкала, необходимая для работы с анимацией.
+             </p>
+             <br>
+             <h2>
+              Область трехмерного просмотра
+            </h2>
+            <p>
+              Область известна также как 3D View или область вьюпорта. Она является основной рабочей зоной Blender. В ней происходит отображение проекции трехмерной сцены, и изначально в этой области появляется базовая фигура — куб. Он нужен, чтобы запустить рендеринг, посмотреть, как работают камера и источник света.
+            </p>
+            <p>
+              Куб можно заменить на другие стандартные объекты: окружность, сферу, цилиндр или конус. Также можно загрузить собственные объекты. Чтобы добавить объект в Blender, используйте сочетание клавиш <b>Shift+A</b>, чтобы открыть меню <b>Add</b> и выбрать нужную фигуру
+            </p>
+            <div class="kontent">  
+            <figure><img src="assets\images\Глава1\Теория\1_1\2.png" alt="1"></figure>
+            </div>
+            <p>
+              <b>Источники света</b> в Blender дают возможность создавать реалистичное освещение на сцене. В программе доступны различные типы источников света:
+            </p>
+              <p>
+                <b>Point</b> — точечный;
+              </p>
+              <p>
+                <b>Spot</b> —  направленный;
+              </p>
+              <p>
+                <b>Area</b> — плоский, то есть в виде площадки;
+              </p>
+              <p>
+                <b>Sun</b> — рассеянный солнечный свет;
+              </p>
+
+            <p>
+              Менять настройки света также можно через меню <b>Add</b>, которое вызывается клавишами <b>Ctrl + A</b>. Дальше нужно кликнуть на раздел <b>Lights</b> и в нем выбрать нужный тип освещения.
+            </p>
+            <div class="kontent">  
+              <figure><img src="assets\images\Глава1\Теория\1_1\3.gif" alt="1"></figure>
+              </div>
+            <p><b>Камера</b> в Blender определяет ту часть сцены, которая видна зрителю, и угол зрения на тот объект, который находится на сцене. Она работает как реальная камера — чем больше выкрутить объектив, тем ближе видно предмет.</p>
+            <div class="kontent">  
+              <figure><img src="assets\images\Глава1\Теория\1_1\4.gif" alt="1"></figure>
+              </div>
+              <p>
+                В основном движение происходит с помощью мыши, но чтобы перемещать камеру в рабочей области, нужно сначала нажать клавиши <b>Shift + F</b>
+              </p>
+              <p> Также можно двигать камерой с помощью клавиш <b>WASD:</b>
+              </p>
+                <p>
+                 <b>W</b> — вверх;
+                </p>
+                <p>
+                  <b>A</b> —  влево;
+                </p>
+                <p>
+                  <b>S</b> — вниз;
+                </p>
+                <p>
+                  <b>D</b> — вправо.
+                </p>
+                <br>
+<h2>
+  Боковая панель свойств
+</h2>
+<p>
+  Позволяет менять настройки (свойства) сцены и объектов. Из-за большого количества они разбиты на несколько групп. Переключаться между группами можно с помощью панели с иконками слева от свойств. Здесь можно управлять:
+</p>
+  <p>
+    - положением объекта (куба по умолчанию).
+  </p>
+  <p>
+   - освещением.
+  </p>
+  <p>
+  -  положением камеры относительно объекта.
+  </p>
+
+<p>
+  Открыть или закрыть боковую панель свойств можно с помощью клавиши <b>N</b>.
+</p>
+</p>
+<div class="kontent">  
+<figure><img src="assets\images\Глава1\Теория\1_1\5.png" alt="1"></figure>
+</div>
+<br>
+<h2>
+  Панель инструментов
+</h2>
+<p>В панели инструментов находятся иконки всех доступных инструменты для моделирования, текстурирования и анимации. Вызвать ее можно с помощью клавиши <b>T</b>.</p>
+<div class="kontent">  
+  <figure><img src="assets\images\Глава1\Теория\1_1\6.png" alt="1"></figure>
+  </div>           
+<p>
+  В зависимости от того, в каком режиме работы находится пользователь, на панели будут разные инструменты. Таким образом, пользователи могут легко переключаться между различными наборами, не теряя времени на поиск нужной функции.
+</p>
+<br>
+<h2>
+  Временная шкала 
+</h2>
+<p>
+  Временная шкала или таймлайн отображают кадры анимации, а цветная полоса показывает текущий выбранный кадр. По умолчанию это всегда первый кадр. Таймлайн позволяет управлять временем в анимации, а также добавлять и удалять ключевые кадры для создания плавных анимационных переходов.
+</p>
+<br>
+<h2>
+  Основное меню
+</h2>
+<p>
+  С его помощью можно загрузить, сохранить или начать новый проект, сбросить настройки, рендерить проект и найти дополнительную информацию по программе.
+</p>
+<br>
+<h2>
+  Как работает мышь в Blender 3D
+</h2>
+<p>
+  В Blender 3D работают обе клавиши мыши. <b>Правая кнопка мыши</b> нужна для выделения элементов.
+</p>
+<div class="kontent">  
+  <figure><img src="assets\images\Глава1\Теория\1_1\7.png" alt="1"></figure>
+  </div> 
+  <p>Чтобы выделить несколько элементов, нужно нажать <b>правую кнопку + Shift</b>. Эта же кнопка используется, чтобы отменить действие (наравне с клавишей ESC).</p>
+  <p><b>Левая кнопка мыши</b> используется для совершения действий с выделенным элементом и для подтверждения действий.</p>
+  <div class="kontent">  
+    <figure><img src="assets\images\Глава1\Теория\1_1\8.png" alt="1"></figure>
+    </div> 
+    <br> 
+    <div class="right"><a href="teorya_g1_2.html"><button>Следующая страницы </button></a></div>             
+     </div>
+     </div>
+
+            
+      <!-- Sidebar -->
+        <div id="sidebar">
+
+          <div class="inner">
+
+            <!-- Search Box -->
+            <section id="search" class="alt">
+              <form method="get" action="#">
+                <input type="text" name="search" id="search" placeholder="Поиск..." />
+              </form>
+            </section>
+              
+                       <!-- Menu -->
+                       <nav id="menu">
+                        <ul>
+                          
+                          <span class="opener">Глава 1 <br>«Знакомство с анимацией в Blender»</span>
+                           <ul class="submenu">
+                            <li><a href="teorya.html" >Устройство Blender 3D  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g1_2.html">Горячие клавиши в Blender  <input type="checkbox"/></a></li>                          
+                            <li><a href="teorya_g1_3.html">Виды анимации  <input type="checkbox"/></a></li> 
+                            <li><a href="teorya_g1_4.html">Как делать анимацию в Blender  <input type="checkbox"/></a></li> 
+                            <li><a href="teorya_g1_5.html">Анимация с помощью ключевых кадров и интерполяция  <input type="checkbox"/></a></li> 
+                            <li><a href="teorya_g1_6.html">Аниация с помощью драйверов  <input type="checkbox"/></a></li> 
+                            <li><a href="teorya_g1_7.html">Рендеринг и экспорт  <input type="checkbox"/></a></li>
+                          </ul>
+                          </li>
+                          <li>
+                            <span class="opener">Глава 2<br> «Камеры и освещение»</span>
+                            <ul class="submenu">
+                              <li><a href="teorya_g2_1.html">Управление камерой в Blender  <input type="checkbox"/></a></li>
+                              <li><a href="teorya_g2_2.html">Настройка света в Blender <input type="checkbox"/></a></li>
+                            </ul>
+                          </li>
+                          <li>
+                          <span class="opener">Глава 3<br> «Простейшая анимация в Blender»</span>
+                          <ul>
+                              <li><a href="teorya_g3_1.html">Принципы анимации в Blender <input type="checkbox"/></a></li>
+                              <li><a href="teorya_g3_1.html">Основы анимации в Blender <input type="checkbox"/></a></li>                             
+                          </ul>
+                        </li>
+                        <li>
+                          <span class="opener">Глава 4 <br>«Физика в Blender»</span>
+                          <ul>
+                            <li><a href="teorya_g4_1.html">Физика в Blender  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g4_2.html">Rigid Body - твердое тело <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g4_3.html">Cloth - ткань  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g4_4.html">Soft Body - мягкое тело  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g4_5.html">Fluid - жидкость  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g4_6.html">Dynamic Paint - динамическая кисть  <input type="checkbox"/></a></li>
+                          </ul>
+                        </li>
+                        <li>
+                          <span class="opener">Глава 5<br> «Система частиц»</span>
+                          <ul>
+                            <li><a href="teorya_g5_1.html">Система частиц общая информация  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g5_2.html">Emitter <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g5_3.html">Hair  <input type="checkbox"/></a></li>
+                          </ul>
+                        </li>
+                        <li>
+                          <span class="opener">Глава 6 <br>«2D-анимация и Моушн-графика»</span>
+                          <ul>
+                            <li><a href="teorya_g6_1.html">2D-анимация: принципы  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g6_2.html">Моушн-графика  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g6_3.html">Моушн-графика в Blender (примеры работ) <input type="checkbox"/></a></li>
+
+                          </ul>
+                        </li>
+                        <li>
+                          <span class="opener">Глава 7 <br>«Анимация и спецэффекты текста» </span>
+                          <ul>
+                            <li><a href="teorya_g7_1.html">Текст в Blender  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g7_2.html">Основные типы анимации текста  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g7_3.html">Примеры анимации текста <input type="checkbox"/></a></li>
+                          </ul>
+                        </li>
+                        <li>
+                          <span class="opener">Глава 8<br> «Модификаторы, аддоны и ноды»</span>
+                          <ul>
+                            <li><a href="teorya_g8_1.html">Модификаторы в Blender  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g8_2.html">Аддоны в Blender  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g8_3.html">Ноды в Blender   <input type="checkbox"/></a></li>
+                          </ul>
+                        </li>
+                        <li> 
+                          <span class="opener">Глава 9<br> «Персонажная анимация»</span>
+                          <ul>
+                            <li><a href="teorya_g9_1.html">Риггинг в Blender  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g9_2.html">Прямая и обратная кинематика  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g9_3.html">Адон Rigify  <input type="checkbox"/></a></li>                         
+                          </ul>
+                        </li>
+                        <li>
+                          <span class="opener">Глава 10<br> «Трекинг в Blender»</span>
+                          <ul>
+                            <li><a href="teorya_g10_1.html">Motion tracking  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g10_2.html">Примеры создания VFX эффектов в Blender  <input type="checkbox"/></a></li>
+                          </ul>
+                        </li>
+                        </nav>
+  <a href="https://www.nntu.ru/structure/view/podrazdeleniya/kafedra-graficheskie-informacionnye-sistemy"> <br>© Кафедра ГИС <br> НГТУ им. Р.Е. Алексеева</a> 
+</div>
+
+    <!-- Back to top -->
+    <div class='back-to-top' id='back-to-top' title='Back to top'><i class='fa fa-chevron-up' ></div>
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/transition.js"></script>
+    <script src="assets/js/owl-carousel.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script src="assets/js/back-to-top.js"></script>
+</body>
+
+
+</html>

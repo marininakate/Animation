@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+
+    <title>Информационная система «Анимация и спецэффекты в Blender»</title>
+    <link rel="shortcut icon" href="assets\images\icon_logo.png" type="image/png">
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+
+  </head>
+
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+      <!-- Main -->
+        <div id="main">
+          <div class="inner">
+
+            <!-- Header -->
+            <header id="header">
+               <!-- TABS -->
+              <div class="topnav">
+                <a href="index.html">Главная</a>
+                <a href="teorya_g4_5.html" class="active">Теория</a>
+                <a href="practik_g4_1.html">Практика</a>
+                <a href="test.html">Тестирование</a> 
+                <a href="ssilki.html">Полезные ссылки</a>
+            
+              </div>
+            
+			
+              <div class="logo">
+                <a href="index.html">Blender</a>
+                </header>
+
+            <!-- контент -->
+            <h3>Fluid - жидкость </h3>
+<p>
+  Моделирование жидкости в Blender — очень интересная тема. Обычно эти симуляции доставляют массу удовольствия и позволяют пользователям создавать потрясающие рендеры .
+</p>
+<div class="kontent">
+  <figure><img src="assets\images\Глава4\Теория\4_5\0.gif" alt="Виды анимации" ></figure>
+  </div>
+<p>
+  Прежде всего нам нужно создать границы, в которых жидкость может содержать . Мы не можем просто поместить его в никуда в Blender. Поэтому этот шаг очень важен, поскольку всегда должны быть границы для жидкостей. Для этих границ нам нужно использовать объект. Любой предмет будет найден, но на данный момент идеально подойдет куб небольшого размера.
+</p>
+<div class="kontent">
+  <figure><img src="assets\images\Глава4\Теория\4_5\1.jpg" alt="Виды анимации" ></figure>
+  </div>
+  <p>Теперь, выбрав этот объект, перейдите к физическим свойствам и включите для него моделирование жидкости, щелкнув по имени. </p>
+  <p>
+    Затем в разделе «Тип жидкости» выберите Domen . Это означает, что он будет привязан к нашему моделированию жидкости. Вы сразу увидите изменения в Кубе. 
+  </p>
+  <div class="kontent">
+    <figure><img src="assets\images\Глава4\Теория\4_5\2.jpg" alt="Виды анимации" ></figure>
+    </div>
+    <p>Теперь нам нужно изменить тип домена с газа на жидкость. Это важно , потому что с жидкостями сейчас работать не получится. После этого куб должен снова стать твердым. </p>
+    <div class="kontent">
+      <figure><img src="assets\images\Глава4\Теория\4_5\3.jpg" alt="Виды анимации" ></figure>
+      </div>
+ <p>Нам также необходимо изменить некоторые другие настройки . Во-первых, нам нужно включить опцию Diffusion. Это важно, потому что от него зависит, как наша жидкость будет выглядеть и чувствовать себя . Доступны три предустановки даже для «Мед», «Масло» и «Вода». Я оставлю значение по умолчанию – Вода. </p>
+<div class="kontent">
+  <figure><img src="assets\images\Глава4\Теория\4_5\4.jpg" alt="Виды анимации" ></figure>
+  </div>
+  <p>Также включите соседнюю опцию Mesh . Это активирует Fluid Mesh, который мы создадим позже. </p>
+  <div class="kontent">
+    <figure><img src="assets\images\Глава4\Теория\4_5\5.jpg" alt="Виды анимации" ></figure>
+    </div>
+    <p>И последнее — проверьте в разделе «Кэш», установлен ли у вас «Тип» «Воспроизведение» , а не «Модульный». Так должно быть по умолчанию, но полезно проверить. В противном случае вы не сможете видеть жидкость в реальном времени.</p>
+    <div class="kontent">
+      <figure><img src="assets\images\Глава4\Теория\4_5\6.jpg" alt="Виды анимации" ></figure>
+      </div>
+    <br>
+    <h2>Создание объекта моделирования потока жидкости в Blender</h2>
+    <br>
+    <p>
+      Теперь, когда мы создали связанный объект для нашей симуляции жидкости в Blender, нам нужно добавить саму жидкость . Для этого нам также нужно создать объект, который будет порождать жидкость на сцене . Лучшим объектом для этого сейчас, вероятно, является UV-сфера
+    </p>
+    <p>
+      После создания — поместите его куда-нибудь в Куб . Включите X-Ray[Ctrl+Z] или Wireframe Viewport Shading, чтобы помочь вам в этом. 
+    </p>
+    <div class="kontent">
+      <figure><img src="assets\images\Глава4\Теория\4_5\7.jpg" alt="Виды анимации" ></figure>
+      </div>
+      <p>Теперь включите моделирование физики жидкости на сфере в свойствах физики. Но на этот раз измените Type на Flow . </p>
+      <div class="kontent">
+        <figure><img src="assets\images\Глава4\Теория\4_5\8.jpg" alt="Виды анимации" ></figure>
+        </div>
+        <p>
+          После этого измените тип потока на «Жидкость» , потому что именно с ним мы хотим иметь дело. Также измените параметр «Поведение потока» на параметр «Приток», который добавит жидкости в симуляцию. 
+        </p>
+        <p>
+          Объекты готовы, и вы сможете запустить анимацию [пробел] и увидеть течение жидкости. Но есть большая вероятность, что ничего не произойдет . Похоже, это ошибка . Но не волнуйтесь, ведь это легко исправить .
+        </p>
+        <p>
+          Все, что вам нужно сделать, это снова выбрать объект домена и изменить настройку разделения разрешения . Вы можете изменить его на все, что захотите, а затем вернуться . Это просто обновит симуляцию и устранит проблему. Также убедитесь, что ваша анимация начинается именно с кадра №1. 
+        </p>
+        <div class="kontent">
+          <figure><img src="assets\images\Глава4\Теория\4_5\9.jpg" alt="Виды анимации" ></figure>
+          </div>
+          <p>Если вы все сделали правильно – объект «Домен» должен стать прозрачным, и вы должны увидеть частицы жидкости, появляющиеся вокруг объекта «Поток» в рентгеновском режиме</p>
+          <br>
+          <h2>
+            Моделирование жидкостей и его настройки
+          </h2>
+          <br>
+          <p>
+            Наконец, теперь вы сможете воспроизвести анимацию, нажав клавишу [Пробел]. Это должно начать расчет физики . Это может оказаться тяжелым испытанием для вашей системы и особенно для вашего процессора, поэтому в зависимости от того, насколько он хорош, расчет может занять некоторое время. Хотя после того, как первоначальные расчеты будут сделаны, следующий раз будет намного быстрее .
+          </p>
+          <div class="kontent">
+            <figure><img src="assets\images\Глава4\Теория\4_5\10.jpg" alt="Виды анимации" ></figure>
+            </div>     
+            <p>Как видите — результат не очень детальный . Вода довольно низкополигональная и показана большими «кусками». Это происходит из-за настройки разделения разрешения в настройках объекта домена. Чем больше значение этих настроек – тем более детализированной будет ваша жидкость, и наоборот. Но, конечно, это также сильно изменит время вычислений. </p>
+            <p>
+              Минимальное значение — 6 и выглядит это довольно забавно. На жидкость не похоже, скорее на желе. Хотя расчеты практически мгновенные. 
+            </p>
+            <div class="kontent">
+              <figure><img src="assets\images\Глава4\Теория\4_5\11.jpg" alt="Виды анимации" ></figure>
+              </div>
+              <p>Значение по умолчанию 32 — это скорее значение предварительного просмотра . Оно достаточно высокое, чтобы вы могли видеть минимальное количество деталей и приблизительное представление о том, как будет вести себя жидкость . Но всегда рекомендуется значительно увеличить эту настройку перед рендерингом. </p>
+              <p>
+                Это показывает, насколько лучше оно выглядит, если увеличить его до 50 делений :
+              </p>
+              <div class="kontent">
+                <figure><img src="assets\images\Глава4\Теория\4_5\12.jpg" alt="Виды анимации" ></figure>
+                </div>
+                <p>Изменение разрешения деления на 100 привело к действительно хорошему качеству моделирования, которое вы видите ниже. На сегодняшний день здесь присутствует большинство деталей и маленькие капли повсюду от жидкости, попадающей на землю и стены. Но это было очень медленно по сравнению с другими. Хотя при окончательном рендеринге люди обычно идут еще выше.</p>
+                <div class="kontent">
+                  <figure><img src="assets\images\Глава4\Теория\4_5\13.jpg" alt="Виды анимации" ></figure>
+                  </div>
+                  <p>Другая важная настройка — это Time Scale прямо под разделом разрешения. Он контролирует скорость симуляции жидкости. Это означает , сколько изменений между каждым кадром . Значение по умолчанию — 1,0, и все предыдущие результаты были именно такими. </p>
+                  <p>
+                    Вот результат расчета Division 50, такой же, как и на двух скриншотах ранее. Но если для Time Scale установлено значение 2 . 
+                  </p>
+                  <div class="kontent">
+                    <figure><img src="assets\images\Глава4\Теория\4_5\14.jpg" alt="Виды анимации" ></figure>
+                    </div>
+                    <p>Если вы сравните – вы увидите разницу. Тот, у которого шкала времени больше, находится намного дальше в анимации , там больше жидкости и уже спокойнее. Хотя это один и тот же кадр анимации. </p>
+                    <p>
+                      Обычно люди уменьшают значение Time Scale . Это замедлит анимацию, но каждый кадр анимации будет более детальным . Некоторые люди используют это для повышения уровня детализации окончательной анимации рендеринга. Иногда вы даже можете значительно уменьшить Time Value, а затем на постобработке увеличить скорость анимации, чтобы она выглядела реалистично.
+                    </p>
+                    <div class="kontent">
+                      <figure><img src="assets\images\Глава4\Теория\4_5\15.jpg" alt="Виды анимации" ></figure>
+                      </div>
+                      <br>
+                      <h2>
+                        Как добавить объекты столкновения в моделирование жидкости
+                      </h2>
+                      <br>
+                      <p>
+                        Просто имитировать обычную жидкость в коробке не так уж и интересно. Гораздо лучше, когда этим жидкостям есть с чем взаимодействовать . Некоторые другие объекты, которые они могут обернуть.
+                      </p>
+                      <p>
+                        Чтобы добавить такой объект — сначала создайте его. Это может быть любая сетка, которая вам нравится, абсолютно никаких ограничений. Затем, если вы прочитаете нашу симуляцию физики в Blender, вы, вероятно, догадаетесь, что нам, вероятно, следует добавить к ней физику столкновений , потому что именно она взаимодействует с другой физикой. 
+                      </p>
+                      <div class="kontent">
+                        <figure><img src="assets\images\Глава4\Теория\4_5\16.jpg" alt="Виды анимации" ></figure>
+                        </div>
+                        <p>Это неправильно, к сожалению. Потому что жидкость проходит сквозь объект . То же самое касается активных и пассивных твердых тел. </p>
+                        <div class="kontent">
+                          <figure><img src="assets\images\Глава4\Теория\4_5\17.jpg" alt="Виды анимации" ></figure>
+                          </div>
+                          <p>Что нам действительно нужно сделать, так это снова добавить к объекту физику жидкости . Но на этот раз мы выберем Effector Type .</p>
+                          <div class="kontent">
+                            <figure><img src="assets\images\Глава4\Теория\4_5\18.jpg" alt="Виды анимации" ></figure>
+                            </div>
+                            <p>Это означает, что на объект будут воздействовать наши жидкости . По умолчанию тип эффектора установлен на Collision, и это именно тот, который нам нужен. Теперь он столкнется с нашим объектом.</p>
+                            <p>
+                              Возможно, вам придется вернуть разрешение и снова принудительно обновить симуляцию . И тогда yаша жидкость сталкивается с сеткой и красиво обволакивает ее.
+                            </p>
+                            <div class="kontent">
+                              <figure><img src="assets\images\Глава4\Теория\4_5\19.jpg" alt="Виды анимации" ></figure>
+                              </div>
+                              <p>Отрендереный результат представлен ниже</p>
+                                <div class="kontent">
+                                  <figure><img src="assets\images\Глава4\Теория\4_5\20.gif" alt="Виды анимации" ></figure>
+                                  </div>
+
+
+                                  <br>
+                                  <a href="teorya_g4_4.html" > <button> Предыдущая страница</button></a><div class="right"><a href="teorya_g4_6.html"><button>Следующая страницы </button></a></div>             
+                                </div>
+                                </div>
+
+            
+      <!-- Sidebar -->
+        <div id="sidebar">
+
+          <div class="inner">
+
+            <!-- Search Box -->
+            <section id="search" class="alt">
+              <form method="get" action="#">
+                <input type="text" name="search" id="search" placeholder="Поиск..." />
+              </form>
+            </section>
+              
+                       <!-- Menu -->
+                       <nav id="menu">
+                        <ul>
+                          <li>
+                          <span class="opener">Глава 1 <br>«Знакомство с анимацией в Blender»</span>
+                           <ul class="submenu">
+                            <li><a href="teorya.html" >Устройство Blender 3D  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g1_2.html">Горячие клавиши в Blender  <input type="checkbox"/></a></li>                          
+                            <li><a href="teorya_g1_3.html">Виды анимации  <input type="checkbox"/></a></li> 
+                            <li><a href="teorya_g1_4.html">Как делать анимацию в Blender  <input type="checkbox"/></a></li> 
+                            <li><a href="teorya_g1_5.html">Анимация с помощью ключевых кадров и интерполяция  <input type="checkbox"/></a></li> 
+                            <li><a href="teorya_g1_6.html">Аниация с помощью драйверов  <input type="checkbox"/></a></li> 
+                            <li><a href="teorya_g1_7.html">Рендеринг и экспорт  <input type="checkbox"/></a></li>
+                          </ul>
+                          </li>
+                          <li>
+                            <span class="opener">Глава 2<br> «Камеры и освещение»</span>
+                            <ul class="submenu">
+                              <li><a href="teorya_g2_1.html">Управление камерой в Blender  <input type="checkbox"/></a></li>
+                              <li><a href="teorya_g2_2.html">Настройка света в Blender <input type="checkbox"/></a></li>
+                            </ul>
+                          </li>
+                          <li>
+                          <span class="opener">Глава 3<br> «Простейшая анимация в Blender»</span>
+                          <ul>
+                              <li><a href="teorya_g3_1.html">Принципы анимации в Blender <input type="checkbox"/></a></li>
+                              <li><a href="teorya_g3_1.html">Основы анимации в Blender <input type="checkbox"/></a></li>                             
+                          </ul>
+                        </li>
+                       
+                          <span class="opener">Глава 4 <br>«Физика в Blender»</span>
+                          <ul>
+                            <li><a href="teorya_g4_1.html">Физика в Blender  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g4_2.html">Rigid Body - твердое тело <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g4_3.html">Cloth - ткань  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g4_4.html">Soft Body - мягкое тело  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g4_5.html">Fluid - жидкость  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g4_6.html">Dynamic Paint - динамическая кисть  <input type="checkbox"/></a></li>
+                          </ul>
+                        </li>
+                        <li>
+                          <span class="opener">Глава 5<br> «Система частиц»</span>
+                          <ul>
+                            <li><a href="teorya_g5_1.html">Система частиц общая информация  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g5_2.html">Emitter <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g5_3.html">Hair  <input type="checkbox"/></a></li>
+
+                          </ul>
+                        </li>
+                        <li>
+                          <span class="opener">Глава 6 <br>«2D-анимация и Моушн-графика»</span>
+                          <ul>
+                            <li><a href="teorya_g6_1.html">2D-анимация: принципы  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g6_2.html">Моушн-графика  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g6_3.html">Моушн-графика в Blender (примеры работ) <input type="checkbox"/></a></li>
+
+                          </ul>
+                        </li>
+                        <li>
+                          <span class="opener">Глава 7 <br>«Анимация и спецэффекты текста» </span>
+                          <ul>
+                            <li><a href="teorya_g7_1.html">Текст в Blender  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g7_2.html">Основные типы анимации текста  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g7_3.html">Примеры анимации текста <input type="checkbox"/></a></li>
+                          </ul>
+                        </li>
+                        <li>
+                          <span class="opener">Глава 8<br> «Модификаторы, аддоны и ноды»</span>
+                          <ul>
+                            <li><a href="teorya_g8_1.html">Модификаторы в Blender  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g8_2.html">Аддоны в Blender  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g8_3.html">Ноды в Blender   <input type="checkbox"/></a></li>
+                          </ul>
+                        </li>
+                        <li> 
+                          <span class="opener">Глава 9<br> «Персонажная анимация»</span>
+                          <ul>
+                            <li><a href="teorya_g9_1.html">Риггинг в Blender  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g9_2.html">Прямая и обратная кинематика  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g9_3.html">Адон Rigify  <input type="checkbox"/></a></li>                         
+                          </ul>
+                        </li>
+                        <li>
+                          <span class="opener">Глава 10<br> «Трекинг в Blender»</span>
+                          <ul>
+                            <li><a href="teorya_g10_1.html">Motion tracking  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g10_2.html">Примеры создания VFX эффектов в Blender  <input type="checkbox"/></a></li>
+                          </ul>
+                        </li>
+                        </nav>
+  <a href="https://www.nntu.ru/structure/view/podrazdeleniya/kafedra-graficheskie-informacionnye-sistemy"> <br>© Кафедра ГИС <br> НГТУ им. Р.Е. Алексеева</a> 
+</div>
+
+    <!-- Back to top -->
+    <div class='back-to-top' id='back-to-top' title='Back to top'><i class='fa fa-chevron-up' ></div>
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/transition.js"></script>
+    <script src="assets/js/owl-carousel.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script src="assets/js/back-to-top.js"></script>
+</body>
+
+
+</html>

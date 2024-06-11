@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+
+    <title>Информационная система «Анимация и спецэффекты в Blender»</title>
+    <link rel="shortcut icon" href="assets\images\icon_logo.png" type="image/png">
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+
+  </head>
+
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+      <!-- Main -->
+        <div id="main">
+          <div class="inner">
+
+            <!-- Header -->
+            <header id="header">
+               <!-- TABS -->
+              <div class="topnav">
+                <a href="index.html">Главная</a>
+                <a href="teorya_g10_1.html" class="active">Теория</a>
+                <a href="practik_g10_1.html">Практика</a>
+                <a href="test.html">Тестирование</a> 
+                <a href="ssilki.html">Полезные ссылки</a>
+            
+              </div>
+            
+			
+              <div class="logo">
+                <a href="index.html">Blender</a>
+                </header>
+
+            <!-- контент -->
+<h3>Motion tracking </h3>
+<p>
+  Motion Tracking (отслеживание движения) используется для отслеживания движения объектов и/или камеры и, через ограничения, для применения этих данных отслеживания к 3D-объектам (или только одному), которые либо были созданы в Blender, либо импортированы в приложение. Трекер движения Blender поддерживает несколько очень мощных инструментов для 2D-отслеживания и 3D-реконструкции движения, включая отслеживание камеры и отслеживание объектов, а также некоторые специальные функции, такие как отслеживание плоскости для композитинга. Дорожки также можно использовать для перемещения и деформации масок для ротоскопирования в Редакторе масок, который доступен в качестве специального режима в Редакторе видеороликов.
+</p>
+<p>
+  В режиме отслеживания доступны три различных представления. Переключаться между режимами просмотра можно с помощью селектора просмотра, который расположен в шапке. Когда вы выберете вид, вся область редактора видеороликов изменится. Следовательно, чтобы отобразить вид кривой или листа покрытия, редактор необходимо разделить на две части, причем один из них должен быть переключен на представление кривой или листа покрытия.
+</p>
+<br>
+<h2>
+  Ручная калибровка объектива 
+</h2>
+<br>
+<p>
+  Все камеры записывают искаженное видео. С этим ничего нельзя поделать из-за особенностей работы оптических линз. Для точного движения камеры необходимо точное значение фокусного расстояния и «сила» дисторсии.
+</p>
+<p>
+  В настоящее время фокусное расстояние можно автоматически получить только из настроек камеры или из информации EXIF. Существуют некоторые внешние инструменты, которые могут помочь найти приблизительные значения для компенсации искажений. Существуют также полностью ручные инструменты, в которых вы можете использовать сетку, на которую влияет модель искажения, а деформированные ячейки определяют прямые линии в отснятом материале.
+</p>
+<p>
+  В Blender вы можете использовать для этого инструмент «Аннотации» — просто нарисуйте линию, которая должна быть прямой на отснятом материале, с помощью кисти из полилиний и отрегулируйте значения искажения, чтобы аннотации соответствовали линиям на отснятом материале.
+</p>
+<p>
+  Чтобы более точно откалибровать камеру, используйте инструмент калибровки сетки из OpenCV. OpenCV использует ту же модель искажений, поэтому проблем быть не должно.
+</p>
+<br>
+<h2>
+  Решение проблемы движения камеры и объекта 
+</h2>
+<br>
+<p>
+  Blender не только поддерживает определение движения камеры, включая снимки со штатива, но также определение движения объекта относительно движения камеры. В дополнение к этому существует Plane Track, который определяет движение всех маркеров в одной плоскости.
+</p>
+<br>
+<h2>
+  Инструменты для ориентации сцены и стабилизации
+</h2>
+<br>
+<p>
+  После решения вам необходимо сориентировать реальную сцену в 3D-сцене для более удобного композитинга. Существуют инструменты для определения пола, начала сцены и осей X/Y для ориентации сцены.
+</p>
+<p>
+  Иногда видеозапись включает ложные прыжки и наклонные движения, как, например, при использовании ручной камеры. Основываясь на некоторых отслеживаемых элементах изображения, 2D-стабилизация способна обнаруживать и компенсировать такие движения, чтобы улучшить качество конечного результата.
+</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/QKcLDlwhZU8?si=fiLpT9wYvQV_AgUc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<br>
+<div class="right"><a href="teorya_g10_2.html"><button>Следующая страницы </button></a></div>             
+</div>
+</div>
+
+            
+      <!-- Sidebar -->
+        <div id="sidebar">
+
+          <div class="inner">
+
+            <!-- Search Box -->
+            <section id="search" class="alt">
+              <form method="get" action="#">
+                <input type="text" name="search" id="search" placeholder="Поиск..." />
+              </form>
+            </section>
+              
+                       <!-- Menu -->
+                       <nav id="menu">
+                        <ul>
+                          <li>
+                          <span class="opener">Глава 1 <br>«Знакомство с анимацией в Blender»</span>
+                           <ul class="submenu">
+                            <li><a href="teorya.html" >Устройство Blender 3D  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g1_2.html">Горячие клавиши в Blender  <input type="checkbox"/></a></li>                          
+                            <li><a href="teorya_g1_3.html">Виды анимации  <input type="checkbox"/></a></li> 
+                            <li><a href="teorya_g1_4.html">Как делать анимацию в Blender  <input type="checkbox"/></a></li> 
+                            <li><a href="teorya_g1_5.html">Анимация с помощью ключевых кадров и интерполяция  <input type="checkbox"/></a></li> 
+                            <li><a href="teorya_g1_6.html">Аниация с помощью драйверов  <input type="checkbox"/></a></li> 
+                            <li><a href="teorya_g1_7.html">Рендеринг и экспорт  <input type="checkbox"/></a></li>
+                          </ul>
+                          </li>
+                          <li>
+                            <span class="opener">Глава 2<br> «Камеры и освещение»</span>
+                            <ul class="submenu">
+                              <li><a href="teorya_g2_1.html">Управление камерой в Blender  <input type="checkbox"/></a></li>
+                              <li><a href="teorya_g2_2.html">Настройка света в Blender <input type="checkbox"/></a></li>
+                            </ul>
+                          </li>
+                          <li>
+                          <span class="opener">Глава 3<br> «Простейшая анимация в Blender»</span>
+                          <ul>
+                              <li><a href="teorya_g3_1.html">Принципы анимации в Blender <input type="checkbox"/></a></li>
+                              <li><a href="teorya_g3_1.html">Основы анимации в Blender <input type="checkbox"/></a></li>                             
+                          </ul>
+                        </li>
+                        <li>
+                          <span class="opener">Глава 4 <br>«Физика в Blender»</span>
+                          <ul>
+                            <li><a href="teorya_g4_1.html">Физика в Blender  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g4_2.html">Rigid Body - твердое тело <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g4_3.html">Cloth - ткань  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g4_4.html">Soft Body - мягкое тело  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g4_5.html">Fluid - жидкость  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g4_6.html">Dynamic Paint - динамическая кисть  <input type="checkbox"/></a></li>
+                          </ul>
+                        </li>
+                        <li>
+                          <span class="opener">Глава 5<br> «Система частиц»</span>
+                          <ul>
+                            <li><a href="teorya_g5_1.html">Система частиц общая информация  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g5_2.html">Emitter <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g5_3.html">Hair  <input type="checkbox"/></a></li>
+                          </ul>
+                        </li>
+                        <li>
+                          <span class="opener">Глава 6 <br>«2D-анимация и Моушн-графика»</span>
+                          <ul>
+                            <li><a href="teorya_g6_1.html">2D-анимация: принципы  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g6_2.html">Моушн-графика  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g6_3.html">Моушн-графика в Blender (примеры работ) <input type="checkbox"/></a></li>
+
+                          </ul>
+                        </li>
+                         <li>
+                          <span class="opener">Глава 7 <br>«Анимация и спецэффекты текста» </span>
+                          <ul>
+                            <li><a href="teorya_g7_1.html">Текст в Blender  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g7_2.html">Основные типы анимации текста  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g7_3.html">Примеры анимации текста <input type="checkbox"/></a></li>
+                          </ul>
+                        </li>
+                       <li>
+                          <span class="opener">Глава 8<br> «Модификаторы, аддоны и ноды»</span>
+                          <ul>
+                            <li><a href="teorya_g8_1.html">Модификаторы в Blender  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g8_2.html">Аддоны в Blender  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g8_3.html">Ноды в Blender   <input type="checkbox"/></a></li>
+                          </ul>
+                        </li>
+                         <li>
+                          <span class="opener">Глава 9<br> «Персонажная анимация»</span>
+                          <ul>
+                            <li><a href="teorya_g9_1.html">Риггинг в Blender  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g9_2.html">Прямая и обратная кинематика  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g9_3.html">Аддон Rigify  <input type="checkbox"/></a></li>                           
+                          </ul>
+                        </li>
+                        
+                          <span class="opener">Глава 10<br> «Трекинг в Blender»</span>
+                          <ul>
+                            <li><a href="teorya_g10_1.html">Motion tracking  <input type="checkbox"/></a></li>
+                            <li><a href="teorya_g10_2.html">Примеры создания VFX эффектов в Blender  <input type="checkbox"/></a></li>
+                          </ul>
+                        </li>
+                        </nav>
+  <a href="https://www.nntu.ru/structure/view/podrazdeleniya/kafedra-graficheskie-informacionnye-sistemy"> <br>© Кафедра ГИС <br> НГТУ им. Р.Е. Алексеева</a> 
+</div>
+
+    <!-- Back to top -->
+    <div class='back-to-top' id='back-to-top' title='Back to top'><i class='fa fa-chevron-up' ></div>
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/transition.js"></script>
+    <script src="assets/js/owl-carousel.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script src="assets/js/back-to-top.js"></script>
+</body>
+
+
+</html>

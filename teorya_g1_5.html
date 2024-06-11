@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+
+    <title>Информационная система «Анимация и спецэффекты в Blender»</title>
+    <link rel="shortcut icon" href="assets\images\icon_logo.png" type="image/png">
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+
+  </head>
+
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+      <!-- Main -->
+        <div id="main">
+          <div class="inner">
+
+            <!-- Header -->
+            <header id="header">
+               <!-- TABS -->
+              <div class="topnav">
+                <a href="index.html">Главная</a>
+                <a href="teorya_g1_5.html" class="active">Теория</a>
+                <a href="practik_g1_1.html">Практика</a>
+                <a href="test.html">Тестирование</a> 
+                <a href="ssilki.html">Полезные ссылки</a>
+            
+              </div>
+            
+			
+              <div class="logo">
+                <a href="index.html">Blender</a>
+                </header>
+
+<!-- контент -->
+<h3>Анимация с помощью ключевых кадров и интерполяция</h3>
+<p>
+Когда мы работаем с программами, основной основ всей анимации является изменение (чаще всего числовых) значений во времени — именно к этому все и сводится.
+</p> 
+<p>
+Например, в первом кадре значение некоторого параметра s = 20, во 2-м s = 21, в 3-м s = 22 и так далее. Такие изменения значений можно использовать для создания анимаций. Например, пусть эта s означает размер некоторой фигуры, тогда в 1-3 кадрах эта фигура будет постепенно увеличиваться в размере. Или мы можем привязать значение s к громкости звуковой дорожки — и получим плавно нарастающий звук. Если s в каждом кадре прибавлять к координатам какого-нибудь объекта, то этот объект будет двигаться.
+</p>
+<div class="kontent">
+  <figure><img src="assets\images\Глава1\Теория\1_5\1.jpg" alt="Виды анимации" ></figure>
+</div>
+<p>
+Анимированным у нас называется любой параметр, значение которого меняется с течением времени (даже если всего один раз за весь промежуток времени, так тоже бывает)
+</p>
+<p>Для удобства восприятия проще всего представлять себе анимированные параметры как 2-мерные графики, где x-координата — это время, а y — значение параметра в момент времени. Да, практически любой софт, позволяющий что-то анимировать, имеет такое представление анимаций.</p>
+<div class="kontent">
+ <figure><img src="assets\images\Глава1\Теория\1_5\2.jpg" alt="Виды анимации" ></figure>
+</div>
+<br>
+<h2>Виды анимации</h2><br>
+<p>Базовых видов анимации — два: анимация по ключевым кадрам (keyframe animation) и процедурная анимация (procedural animation). Они могут использоваться по отдельности или совместно.</p>
+<br>
+<h2>Анимация с помощью ключевых кадров и интерполяция</h2><br>
+<p>
+Ключевой кадр — это кадр анимации, для которого задано конкретное значение определенного параметра. На изображении ниже ключевыми кадрами для параметра S (из первоначального примера) являются кадры 1, 2, 3, 4 и 10 — на графике изменения значения S они обозначаются точками. Также можно видеть, какие значения заданы для S в этих точках (20, 21, 22, 23 и 29 соответственно).
+</p>
+<div class="kontent">
+  <figure><img src="assets\images\Глава1\Теория\1_5\3.jpg" alt="Виды анимации" ></figure>
+</div>
+<p>
+  Такие «ключи» могут задаваться вручную, а могут создаваться в результате работы тех или иных алгоритмов (например, трекинга или записываться Motion control'ом).
+</p>
+<p><b>Интерполяция</b> — это метод расчета промежуточных значений параметра. На приведенной выше иллюстрации видно, что не для всех кадров заданы значения S. Тем не менее, линия графика показывает, что они существуют. Значения S между 4 и 10 кадром получены при помощи интерполяции — в данном случае линейной.
+</p>
+<p><b>В общем случае существует три вида (метода) интерполяции:</b></p>
+<p>
+<b>линейная (linear)</b> — соедините два ключевых кадра прямой линией, и вы получите этот метод интерполяции;
+</p>
+<div class="kontent">
+  <figure><img src="assets\images\Глава1\Теория\1_5\4.gif" alt="Виды анимации" ></figure>
+</div>
+<p>
+<b>постоянная (constant) или ступенчатая</b>— значение параметра из предыдущего ключевого кадра дублируется на все последующие кадры до следующего ключевого, который скачкообразно меняет значение на новое;
+<div class="kontent">
+ <figure><img src="assets\images\Глава1\Теория\1_5\5.gif" alt="Виды анимации" ></figure>
+</div>
+<p>
+<b>кривая (сплайн) </b> — значение параметра между ключевыми кадрами меняется не линейно, а неравномерно; график изменения значений в данном случае представляет собой тот или иной вид сплайнов, среди которых самыми распространенными являются кривые безье (bezier)
+</p>
+<div class="kontent">
+ <figure><img src="assets\images\Глава1\Теория\1_5\6.gif" alt="Виды анимации" ></figure>
+</div>
+<p>
+  Анимация ключевыми кадрами позволяет реализовать любую анимацию, которая в принципе возможна средствами программного обеспечения, правда, иногда работа исключительно через ключевые кадры может быть излишне муторной, а посему была придумана...
+</p>
+<br>
+<h2>Процедурная анимация</h2>
+<br>
+<p>Если в анимации по ключевым кадрам изменение значения описывается установкой конкретных значений в конкретный момент времени (и методов расчета промежуточных значений), то процедурная (или вычисляемая) анимация — это подход, описывающий правила вычисления значений в каждый момент времени. Проще говоря:</p>
+<p><b>анимация по ключевым кадрам </b> — это набор конечных значений;</p>
+<p><b>процедурная анимация</b> — это формулы для вычисления значений.</p>
+<p>Процедурная анимация описывается математическими формулами и/или программным кодом (выражения, скрипты, программы). В ряде случаев это позволяет существенно оптимизировать процесс создания анимации, а иногда (не так, чтобы очень редко, на самом деле) это единственный способ решить задачу в разумные сроки.</p>
+<div class="kontent">
+  <figure><img src="assets\images\Глава1\Теория\1_5\7.gif" alt="Виды анимации" ></figure>
+ </div>
+ <p>Процедурная анимация описывается математическими формулами и/или программным кодом (выражения, скрипты, программы). В ряде случаев это позволяет существенно оптимизировать процесс создания анимации, а иногда (не так, чтобы очень редко, на самом деле) это единственный способ решить задачу в разумные сроки.</p>
+ <br>
+<h2>Процедурная анимация</h2>
+<br>
+<p>Оба способа анимации часто задействуются совместно, отлично дополняя друг-друга. Например, можно сделать анимацию камеры при помощи ключей, но добавить к итоговым кривым функцию легкого шума (случайных значений), чтобы создать эффект съемки с рук. Приведенный выше пример с круговым движением объекта можно дополнить анимацией движения объекта по некоторой траектории, заданной ключами. Результатом трекинга всегда становится ключевая анимация, к кривым которой можно затем применить функции сглаживания. Можно сделать фрагмент анимации при помощи ключей, а затем использовать скрипты, чтобы продлить его, интерполировать или построить на его основе множество легко управляемых вариаций — примеры можно приводить бесконечно. </p>
+<div class="kontent">
+  <figure><img src="assets\images\Глава1\Теория\1_5\8.jpg" alt="Виды анимации" ></figure>
+ </div>
+<p>
+  Специалист исходит из вопросов целесообразности и оптимизации: если работать ключевыми кадрами будет быстрее (в том числе и править результат), он будет работать ключевыми кадрами. Если процедурная анимация в перспективе даст выигрыш во времени работы, — будет писать скрипты.
+</p>
+<br>
+  <a href="teorya_g1_4.html" > <button> Предыдущая страница</button></a><div class="right"><a href="teorya_g1_6.html"><button>Следующая страницы </button></a></div>             
+</div>
+</div>
+
+            
+      <!-- Sidebar -->
+        <div id="sidebar">
+
+          <div class="inner">
+
+            <!-- Search Box -->
+            <section id="search" class="alt">
+              <form method="get" action="#">
+                <input type="text" name="search" id="search" placeholder="Поиск..." />
+              </form>
+            </section>
+              
+                                  <!-- Menu -->
+                                  <nav id="menu">
+                                    <ul>
+                                      
+                                      <span class="opener">Глава 1 <br>«Знакомство с анимацией в Blender»</span>
+                                       <ul class="submenu">
+                                        <li><a href="teorya.html" >Устройство Blender 3D  <input type="checkbox"/></a></li>
+                                        <li><a href="teorya_g1_2.html">Горячие клавиши в Blender  <input type="checkbox"/></a></li>                          
+                                        <li><a href="teorya_g1_3.html">Виды анимации  <input type="checkbox"/></a></li> 
+                                        <li><a href="teorya_g1_4.html">Как делать анимацию в Blender  <input type="checkbox"/></a></li> 
+                                        <li><a href="teorya_g1_5.html">Анимация с помощью ключевых кадров и интерполяция  <input type="checkbox"/></a></li> 
+                                        <li><a href="teorya_g1_6.html">Аниация с помощью драйверов  <input type="checkbox"/></a></li> 
+                                        <li><a href="teorya_g1_7.html">Рендеринг и экспорт  <input type="checkbox"/></a></li>
+                                      </ul>
+                                      </li>
+                                      <li>
+                                        <span class="opener">Глава 2<br> «Камеры и освещение»</span>
+                                        <ul class="submenu">
+                                          <li><a href="teorya_g2_1.html">Управление камерой в Blender  <input type="checkbox"/></a></li>
+                                          <li><a href="teorya_g2_2.html">Настройка света в Blender <input type="checkbox"/></a></li>
+                                        </ul>
+                                      </li>
+                                      <li>
+                                      <span class="opener">Глава 3<br> «Простейшая анимация в Blender»</span>
+                                      <ul>
+                                          <li><a href="teorya_g3_1.html">Принципы анимации в Blender <input type="checkbox"/></a></li>
+                                          <li><a href="teorya_g3_1.html">Основы анимации в Blender <input type="checkbox"/></a></li>                             
+                                      </ul>
+                                    </li>
+                                    <li>
+                                      <span class="opener">Глава 4 <br>«Физика в Blender»</span>
+                                      <ul>
+                                        <li><a href="teorya_g4_1.html">Физика в Blender  <input type="checkbox"/></a></li>
+                                        <li><a href="teorya_g4_2.html">Rigid Body - твердое тело <input type="checkbox"/></a></li>
+                                        <li><a href="teorya_g4_3.html">Cloth - ткань  <input type="checkbox"/></a></li>
+                                        <li><a href="teorya_g4_4.html">Soft Body - мягкое тело  <input type="checkbox"/></a></li>
+                                        <li><a href="teorya_g4_5.html">Fluid - жидкость  <input type="checkbox"/></a></li>
+                                        <li><a href="teorya_g4_6.html">Dynamic Paint - динамическая кисть  <input type="checkbox"/></a></li>
+                                      </ul>
+                                    </li>
+                                    <li>
+                                      <span class="opener">Глава 5<br> «Система частиц»</span>
+                                      <ul>
+                                        <li><a href="teorya_g5_1.html">Система частиц общая информация  <input type="checkbox"/></a></li>
+                                        <li><a href="teorya_g5_2.html">Emitter <input type="checkbox"/></a></li>
+                                        <li><a href="teorya_g5_3.html">Hair  <input type="checkbox"/></a></li>
+                                      </ul>
+                                    </li>
+                                    <li>
+                                      <span class="opener">Глава 6 <br>«2D-анимация и Моушн-графика»</span>
+                                      <ul>
+                                        <li><a href="teorya_g6_1.html">2D-анимация: принципы  <input type="checkbox"/></a></li>
+                                        <li><a href="teorya_g6_2.html">Моушн-графика  <input type="checkbox"/></a></li>
+                                        <li><a href="teorya_g6_3.html">Моушн-графика в Blender (примеры работ) <input type="checkbox"/></a></li>
+            
+                                      </ul>
+                                    </li>
+                                    <li>
+                                      <span class="opener">Глава 7 <br>«Анимация и спецэффекты текста» </span>
+                                      <ul>
+                                        <li><a href="teorya_g7_1.html">Текст в Blender  <input type="checkbox"/></a></li>
+                                        <li><a href="teorya_g7_2.html">Основные типы анимации текста  <input type="checkbox"/></a></li>
+                                        <li><a href="teorya_g7_3.html">Примеры анимации текста <input type="checkbox"/></a></li>
+                                      </ul>
+                                    </li>
+                                    <li>
+                                      <span class="opener">Глава 8<br> «Модификаторы, аддоны и ноды»</span>
+                                      <ul>
+                                        <li><a href="teorya_g8_1.html">Модификаторы в Blender  <input type="checkbox"/></a></li>
+                                        <li><a href="teorya_g8_2.html">Аддоны в Blender  <input type="checkbox"/></a></li>
+                                        <li><a href="teorya_g8_3.html">Ноды в Blender   <input type="checkbox"/></a></li>
+                                      </ul>
+                                    </li>
+                                    <li> 
+                                      <span class="opener">Глава 9<br> «Персонажная анимация»</span>
+                                      <ul>
+                                        <li><a href="teorya_g9_1.html">Риггинг в Blender  <input type="checkbox"/></a></li>
+                                        <li><a href="teorya_g9_2.html">Прямая и обратная кинематика  <input type="checkbox"/></a></li>
+                                        <li><a href="teorya_g9_3.html">Адон Rigify  <input type="checkbox"/></a></li>                          
+                                      </ul>
+                                    </li>
+                                    <li>
+                                      <span class="opener">Глава 10<br> «Трекинг в Blender»</span>
+                                      <ul>
+                                        <li><a href="teorya_g10_1.html">Motion tracking  <input type="checkbox"/></a></li>
+                                        <li><a href="teorya_g10_2.html">Примеры создания VFX эффектов в Blender  <input type="checkbox"/></a></li>
+                                      </ul>
+                                    </li>
+                                    </nav>
+              <a href="https://www.nntu.ru/structure/view/podrazdeleniya/kafedra-graficheskie-informacionnye-sistemy"> <br>© Кафедра ГИС <br> НГТУ им. Р.Е. Алексеева</a> 
+            </div>
+
+    <!-- Back to top -->
+    <div class='back-to-top' id='back-to-top' title='Back to top'><i class='fa fa-chevron-up' ></div>
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/transition.js"></script>
+    <script src="assets/js/owl-carousel.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script src="assets/js/back-to-top.js"></script>
+</body>
+
+
+</html>

@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    </script>
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+
+    <title>Информационная система «Анимация и спецэффекты в Blender»</title>
+    <link rel="shortcut icon" href="assets\images\icon_logo.png" type="image/png">
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+
+  </head>
+
+<body class="is-preload">
+
+              <!-- Wrapper -->
+              <div id="wrapper">
+          
+                <!-- Main -->
+                  <div id="main">
+                    <div class="inner">
+          
+                      <!-- Header -->
+                      <header id="header">
+                         <!-- TABS -->
+                         <div class="topnav">
+                          <a href="index.html">Главная</a>
+                          <a href="teorya_g8_1.html">Теория</a>
+                          <a href="practik_g8_2.html"  class="active">Практика</a>
+                          <a href="test.html">Тестирование</a> 
+                          <a href="ssilki.html">Полезные ссылки</a>
+                        </div>
+                      
+                        <div class="logo">
+                          <a href="index.html">Blender</a>
+                        </div>
+                      </header>
+   
+<h3>Урок 2 – Эффект силового поля</h3>
+
+<p>В результате этого урока должна получиться следующая анимация:</p>
+<div class="kontent">
+  <figure><img width="768" height="432" src="assets\media\8_2.gif" alt="Эффект силового поля" ></figure>
+  </div>
+  <p>
+    Удалим все со сцены и добавим Iso Sphere, уровень подразделений выберем Subdivision=3.
+  </p>
+  <div class="kontent">  
+    <figure><img src="assets\images\Глава8\Практика\8_2\image001.jpg" alt="1"></figure>
+  </div>
+<p>
+  Добавим модификатор Subdivision Surface и установим Render=1.
+</p>
+  <div class="kontent">  
+    <figure><img src="assets\images\Глава8\Практика\8_2\image002.jpg" alt="1"></figure>
+  </div>
+<p>
+  Добавим модификатор Edge Split и установим Split Angle = 6.
+</p>
+  <div class="kontent">  
+    <figure><img src="assets\images\Глава8\Практика\8_2\image003.jpg" alt="1"></figure>
+  </div>
+  <p>
+    Добавим модификатор Vertex Weight Proximity.
+  </p>
+  <div class="kontent">  
+    <figure><img src="assets\images\Глава8\Практика\8_2\image004.jpg" alt="1"></figure>
+  </div>
+<p>
+  Перейдем в режим редактирования сферы и создадим новую группу вершин с Weight=1, тип Assign.
+</p>
+  <div class="kontent">  
+    <figure><img src="assets\images\Глава8\Практика\8_2\image005.jpg" alt="1"></figure>
+  </div>
+<p>
+  Добавим на сцену пустышку Empty, сместим вправо и уменьшим в размере.
+</p>
+<div class="kontent">  
+  <figure><img src="assets\images\Глава8\Практика\8_2\image006.jpg" alt="1"></figure>
+</div>
+<p>
+  Вернемся к настройке модификаторов и в Vertex Weight Proximity в Vertex Group выберем созданную группу, а в Target Object пустышку.
+</p>
+<div class="kontent">  
+  <figure><img src="assets\images\Глава8\Практика\8_2\image007.jpg" alt="1"></figure>
+</div>
+<p>
+  Добавим 4ый модификатор Smooth. В нем установим Factor = 1.6, в группе также выбираем ранее созданную группу.
+</p>
+<div class="kontent">  
+  <figure><img src="assets\images\Глава8\Практика\8_2\image008.jpg" alt="1"></figure>
+</div>
+<p>
+  Вернемся к модификатору и в Vertex Weight Proximity и изменим Proximity Mode Object на Geometry, выберем Vertex.
+</p>
+<div class="kontent">  
+  <figure><img src="assets\images\Глава8\Практика\8_2\image009.jpg" alt="1"></figure>
+</div>
+<p>
+  В выделенной сфере перейдем на режим Weight Pain. Отрегулируем значения Lowest и Highest модификатора Vertex Weight Proximity. 
+</p>
+<p>
+  Lowest=2,30 и Highest=1,10.  
+</p>
+<div class="kontent">  
+  <figure><img src="assets\images\Глава8\Практика\8_2\image010.jpg" alt="1"></figure>
+</div>
+<p>
+  Теперь при перемещении пустышки будет изменяться оболочка сферы.
+</p>
+<p>
+  Добавим еще один модификатор Solidify и установим Thickness=0.03.
+</p>
+<div class="kontent">  
+  <figure><img src="assets\images\Глава8\Практика\8_2\image011.jpg" alt="1"></figure>
+</div>
+<p>
+  Добавим внутри сферы еще одну сферу UV Sphere и сделаем ее немного меньше предыдущей.
+</p>
+<div class="kontent">  
+<figure><img src="assets\images\Глава8\Практика\8_2\image012.jpg" alt="1"></figure>
+</div>
+<p>
+  Добавим в сцену еще плоскость и повернем ее по оси Х на 90 градусов, отодвинем за сферы и увеличим в размере.
+</p>
+<div class="kontent">  
+<figure><img src="assets\images\Глава8\Практика\8_2\image013.jpg" alt="1"></figure>
+</div>
+<p>
+  Добавим камеру и настроим ее положение.
+</p>
+<div class="kontent">  
+<figure><img src="assets\images\Глава8\Практика\8_2\image014.jpg" alt="1"></figure>
+</div>
+<p>
+  Приступим к настройке материалов, перейдем в редактор нодов.
+</p>
+<p>
+  Для плоскости создадим материал типа Diffuse BSDF. Добавим Noise Texture, Mapping, Texture Coordinate и Mix Color. 
+</p>
+<div class="kontent">  
+  <figure><img src="assets\images\Глава8\Практика\8_2\image015.jpg" alt="1"></figure>
+  </div>
+  <p>
+    Соединим Generated «Texture Coordinate» и Vector «Mapping».
+  </p>
+  <p>
+    Соединим Vector «Mapping» и Vector «Noise Texture». В Noise Texture установим Scale=1,5.
+  </p>
+  <p>
+    Fac «Noise Texture» и A «Mix Color».
+  </p>
+  <p>
+    Color «Mix Color» и Color « Diffuse BSDF».
+  </p>
+  <div class="kontent">  
+  <figure><img src="assets\images\Глава8\Практика\8_2\image016.jpg" alt="1"></figure>
+  </div>
+  <p>
+    В настройках мира установим белый цвет и Strength=1,5.
+  </p>
+  <div class="kontent">  
+    <figure><img src="assets\images\Глава8\Практика\8_2\image017.jpg" alt="1"></figure>
+    </div>
+    <p>
+      Также установим Ambient Occlusion в настройках рендера со значением Factor=0,5.
+    </p>
+    <div class="kontent">  
+      <figure><img src="assets\images\Глава8\Практика\8_2\image018.jpg" alt="1"></figure>
+      </div>
+      <p>
+        Для сферы будем использовать материал Mix Shader. И добавим шейдеры Diffuse BSDF и Glossy BSDF и. В Diffuse BSDF установим черный цвет. В Glossy BSDF оставим белый цвет и Roughness=0. 
+      </p>
+      <div class="kontent">  
+        <figure><img src="assets\images\Глава8\Практика\8_2\image019.jpg" alt="1"></figure>
+        </div>
+        <p>
+          Добавим нод Fresnel и кривую RGB Curve. Изменим кривую в RGB Curve.
+        </p>
+        <p>
+          Соединим «Fresnel» с Color «RGB Curve».
+        </p>
+        <p>
+          Color «RGB Curve» с Fac « Mix Shader».
+        </p>
+        <div class="kontent">  
+          <figure><img src="assets\images\Глава8\Практика\8_2\image020.jpg" alt="1"></figure>
+          </div>
+          <p>
+            Для внутренней сферы будем использовать материал Mix Shader. Добавим два шейдера Emmision c желтым и оранжевым цветом и подключим их к Mix Shader. У желтого цвета установим Strenght=2, у оранжевого цвета установим Strenght=10.
+          </p>
+          <div class="kontent">  
+            <figure><img src="assets\images\Глава8\Практика\8_2\image021.jpg" alt="1"></figure>
+            </div>
+            <p>
+              Также добавим нод Light Path и подключим Ray Depth к Fac «Mix Shader»
+            </p>
+            <div class="kontent">  
+              <figure><img src="assets\images\Глава8\Практика\8_2\image022.jpg" alt="1"></figure>
+              </div>
+              <p>
+                Теперь приступим к созданию анимации.<br>
+                Установим длительность анимации 250 кадров. <br>
+                Повернем iso сферу так, чтобы по всем осям были 0 и установим ключевой кадр в первом кадре.
+                
+              </p>
+              <div class="kontent">  
+                <figure><img src="assets\images\Глава8\Практика\8_2\image023.jpg" alt="1"></figure>
+                </div>
+                <p>
+                  В последнем кадре повернем сферу по оси Z на 250 и установим ключи.
+                </p>
+                <div class="kontent">  
+                  <figure><img src="assets\images\Глава8\Практика\8_2\image024.jpg" alt="1"></figure>
+                  </div>
+                  <p>
+                    В Graph Editor установим для вращения сферы тип интерполяции Linear.
+                  </p>
+                  <div class="kontent">  
+                    <figure><img src="assets\images\Глава8\Практика\8_2\image025.jpg" alt="1"></figure>
+                    </div>
+                    <p>
+                      Установим ключ Location на пустышку в 1 кадре.
+                    </p>
+                    <div class="kontent">  
+                      <figure><img src="assets\images\Глава8\Практика\8_2\image026.jpg" alt="1"></figure>
+                      </div>
+                      <p>
+                        Затем переместимся в 50 кадр, сдвинем пустышку в противоположную сторону и установим ключ Location.
+                      </p>
+                      <div class="kontent">  
+                        <figure><img src="assets\images\Глава8\Практика\8_2\image027.jpg" alt="1"></figure>
+                        </div>
+                        <p>
+                          В 100 кадре переместим пустышку вверх над сферами и установим ключ Location.
+                        </p>
+                        <div class="kontent">  
+                          <figure><img src="assets\images\Глава8\Практика\8_2\image028.jpg" alt="1"></figure>
+                          </div>
+                          <p>
+                            В 150 кадре переместим пустышку в центр сфер и установим ключ Location.
+                          </p>
+                          <div class="kontent">  
+                            <figure><img src="assets\images\Глава8\Практика\8_2\image029.jpg" alt="1"></figure>
+                            </div>
+                            <p>
+                              В 200 кадре переместим пустышку вниз под сферы и установим ключ Location.
+                            </p>
+                            <div class="kontent">  
+                              <figure><img src="assets\images\Глава8\Практика\8_2\image030.jpg" alt="1"></figure>
+                              </div>
+                              <p>
+                                В 250 кадре переместим пустышку вниз вправо и установим ключ Location.
+                              </p>
+                              <div class="kontent">  
+                                <figure><img src="assets\images\Глава8\Практика\8_2\image031.jpg" alt="1"></figure>
+                                </div>
+                                <p>
+                                  В Graph Editor установим для перемещения пустышки тип интерполяции Linear.
+                                </p>
+                                <div class="kontent">  
+                                  <figure><img src="assets\images\Глава8\Практика\8_2\image032.jpg" alt="1"></figure>
+                                  </div>
+                                  <p>
+                                    Вернемся к настройке модификатора Edge Split и упоменяем Split Angle на 3,5 или как вам больше нравится.
+                                  </p>
+                                  <div class="kontent">  
+                                    <figure><img src="assets\images\Глава8\Практика\8_2\image033.jpg" alt="1"></figure>
+                                    </div>
+                                    <p>
+                                      Отрендерим полученную анимацию.
+                                    </p>
+                                    
+
+
+                                    <br> 
+                                    <a href="practik_g8_1.html" > <button> Предыдущая страница</button></a><div class="right"><a href="practik_g8_3.html"><button>Следующая страницы </button></a></div>             
+                                     </div>
+                                     </div>
+                                            
+          
+                <!-- Sidebar -->
+                  <div id="sidebar">
+          
+                    <div class="inner">
+          
+                      <!-- Search Box -->
+                      <section id="search" class="alt">
+                        <form method="get" action="#">
+                          <input type="text" name="search" id="search" placeholder="Поиск..." />
+                        </form>
+                      </section>
+
+ 
+            <!-- Menu -->
+            <nav id="menu">
+              <ul>
+                <li>
+                <span class="opener">Глава 1 <br>«Знакомство с анимацией в Blender»</span>
+                 <ul class="submenu">
+                    <li> <a href="practik_g1_1.html">1. Простая анимация  <input type="checkbox"/></a></li>
+                    <li><a href="practik_g1_2.html">2. Интерполящия ключей  <input type="checkbox"/></a></li>
+                    <li><a href="practik_g1_3.html">3. Отскок (Bounce)  <input type="checkbox"/> </a></li>
+                    <li><a href="practik_g1_4.html">4. Упругость (Elastic)  <input type="checkbox"/></a></li>
+                    <li><a href="practik_g1_5.html">5. Сзади (Back)  <input type="checkbox"/></a></li>
+                    <li><a href="practik_g1_6.html">6. Анимация с помощью драйверов  <input type="checkbox"/></a></li>
+                    <li><a href="practik_g1_7.html">7. Анимация с помощью модификаторов  <input type="checkbox"/></a></li>
+                    <li><a href="practik_g1_8.html">Самостоятельные задания  <input type="checkbox"/></a></li>
+                  </ul>
+                </li>
+                <li>
+                  <span class="opener">Глава 2<br> «Камеры и освещение»</span>
+                  <ul class="submenu">
+                    <li><a href="practik_g2_1.html">1. Анимация камеры  <input type="checkbox"/></a></li>
+                    <li><a href="practik_g2_2.html">2. Слежение  <input type="checkbox"/></a></li>
+                    <li><a href="practik_g2_3.html">3. Переключение камер  <input type="checkbox"/></a></li>
+                    <li><a href="practik_g2_4.html">4. Движение камеры по пути  <input type="checkbox"/></a></li>
+                    <li><a href="practik_g2_5.html">5. Включение/выключение света  <input type="checkbox"/></a></li>
+                    <li><a href="practik_g2_6.html">Самостоятельные задания  <input type="checkbox"/></a></li>
+                  </ul>
+                </li>
+                <li>
+                <span class="opener">Глава 3<br> «Простейшая анимация в Blender»</span>
+                <ul>
+                    <li><a href="practik_g3_1.html">1. Изменение формы  <input type="checkbox"/></a></li>
+                    <li><a href="practik_g3_2.html">2. Анимация захода солнца  <input type="checkbox"/></a></li>
+                    <li><a href="practik_g3_3.html">3. Аудиовизуализация  <input type="checkbox"/></a></li>
+                    <li><a href="practik_g3_4.html">4. Анимация будильника  <input type="checkbox"/></a></li>
+                    <li><a href="practik_g3_5.html">5. Анимация по пути  <input type="checkbox"/></a></li>
+                    <li><a href="practik_g3_6.html">6. Зацикленная абстрактная анимация  <input type="checkbox"/></a></li>
+                    <li><a href="practik_g3_7.html">Самостоятельные задания  <input type="checkbox"/></a></li>
+                </ul>
+              </li>
+              <li>
+                <span class="opener">Глава 4 <br>«Физика в Blender»</span>
+                <ul>
+                  <li><a href="practik_g4_1.html">1. Физика твердых тел  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g4_2.html">2. Физика упругих тел  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g4_3.html">3. Симуляция ткани  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g4_4.html">4. Мятая банка  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g4_5.html">5. Физика водной поверхности  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g4_6.html">6. Физика Metaballs  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g4_7.html">Самостоятельные задания  <input type="checkbox"/></a></li>
+                </ul>
+              </li>
+             <li>
+                <span class="opener">Глава 5<br> «Система частиц»</span>
+                <ul>
+                  <li><a href="practik_g5_1.html">1. Искры  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g5_2.html">2. Фейверк  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g5_3.html">3. Абстрактные частицы  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g5_4.html">4. Particle Physics  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g5_5.html">5. Анимация волос  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g5_6.html">Самостоятельные задания  <input type="checkbox"/></a></li>
+                </ul>
+              </li>
+              <li>
+                <span class="opener">Глава 6 <br>«2D-анимация и Моушн-графика»</span>
+                <ul>
+                  <li><a href="practik_g6_1.html">1. Поп-круг  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g6_2.html">2. Простой моушен текст  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g6_3.html">3. Рукописный текст  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g6_4.html">4. шестиугольники в стиле Motion Graphics  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g6_5.html">5. Ретро анимация в стиле 80-ых  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g6_6.html">6. 2D-мяч  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g6_7.html">Самостоятельные задания  <input type="checkbox"/></a></li>
+                </ul>
+              </li>
+              <li>
+                <span class="opener">Глава 7 <br>«Анимация и спецэффекты текста» </span>
+                <ul>
+                  <li><a href="practik_g7_1.html">1. Анимация и спецэффекты текста  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g7_2.html">2. Неоновый текст  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g7_3.html">3. Жидкий текст  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g7_4.html">4. Глитч эффект  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g7_6.html">Самостоятельные задания  <input type="checkbox"/></a></li>
+                </ul>
+              </li>
+              
+                <span class="opener">Глава 8<br> «Модификаторы, аддоны и ноды»</span>
+                <ul>
+                  <li><a href="practik_g8_1.html">1. Анимация превращения одного объекта в другой  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g8_2.html">2. Эффект силового поля  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g8_3.html">3. NTF  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g8_4.html">4. Cell Fracture  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g8_5.html">5. Build  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g8_6.html">Самостоятельные задания  <input type="checkbox"/></a></li>
+                </ul>
+              </li>
+              <li>
+                <span class="opener">Глава 9<br> «Персонажная анимация»</span>
+                <ul>
+                  <li><a href="practik_g9_1.html">1. Shape keys <input type="checkbox"/></a></li>
+                  <li><a href="practik_g9_2.html">2. Виртуальный скелет  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g9_3.html">3. Инвёрсная кинематика  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g9_4.html">4. Аддон Rigify  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g9_5.html">Самостоятельные задания  <input type="checkbox"/></a></li>
+                </ul>
+              </li>
+              <li>
+                <span class="opener">Глава 10<br> «Трекинг в Blender»</span>
+                <ul>
+                  <li><a href="practik_g10_1.html">1. 3d Camera tracking  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g10_2.html">Самостоятельные задания  <input type="checkbox"/></a></li>
+                </ul>
+              </li>
+              </nav>
+  <a href="https://www.nntu.ru/structure/view/podrazdeleniya/kafedra-graficheskie-informacionnye-sistemy"> <br>© Кафедра ГИС <br> НГТУ им. Р.Е. Алексеева</a> 
+</div>
+
+    <!-- Back to top -->
+    <div class='back-to-top' id='back-to-top' title='Back to top'><i class='fa fa-chevron-up' ></div>
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/transition.js"></script>
+    <script src="assets/js/owl-carousel.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script src="assets/js/back-to-top.js"></script>
+    <script src="assets/js/menu.js"></script>
+
+
+</body>
+
+
+</html>

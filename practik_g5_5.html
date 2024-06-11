@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    </script>
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+
+    <title>Информационная система «Анимация и спецэффекты в Blender»</title>
+    <link rel="shortcut icon" href="assets\images\icon_logo.png" type="image/png">
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+
+  </head>
+
+<body class="is-preload">
+
+              <!-- Wrapper -->
+              <div id="wrapper">
+          
+                <!-- Main -->
+                  <div id="main">
+                    <div class="inner">
+          
+                      <!-- Header -->
+                      <header id="header">
+                         <!-- TABS -->
+                        <div class="topnav">
+                          <a href="index.html">Главная</a>
+                          <a href="teorya_g5_1.html">Теория</a>
+                          <a href="practik_g5_5.html"  class="active">Практика</a>
+                          <a href="test.html">Тестирование</a> 
+                          <a href="ssilki.html">Полезные ссылки</a>
+                          
+                        </div>
+                      
+                        <div class="logo">
+                          <a href="index.html">Blender</a>
+                        </div>
+                      </header>
+   
+<h3>Урок 5 – Анимация волос</h3>
+
+<p>В результате этого урока должна получиться следующая анимация:</p>
+<div class="kontent">
+  <figure><img width="768" height="432" src="assets\media\5_5_1.gif" alt="Анимация волос" ></figure>
+  </div>
+
+  <p>
+    Удалил со сцены камеру и свет. Перейдем в режим редактирования Edit Mode, при помощи Loop Cut and Slide (Ctrl R) подразделим куб следующим образом.
+  </p>
+  <div class="kontent">  
+    <figure><img src="assets\images\Глава5\Практика\5_5\image001.jpg" alt="1"></figure>
+  </div>
+<p>
+  И при помощи Extrude Faces (E) сделаем на нашем кубе такие вот выступы.
+</p>
+  <div class="kontent">  
+    <figure><img src="assets\images\Глава5\Практика\5_5\image002.jpg" alt="1"></figure>
+  </div>
+<p>
+  Выберем наш куб и добавим ему модификатор Array, в настройках модификатора установим <br>
+  Count = 10<br>
+  Factor X = 0<br>
+  Factor Y = 0.9<br>
+  Factor Z = 0.9<br>
+  Чтобы у нас получилась вот такая лестница(Вы можете сделать свою лестницу увеличив или уменьшив количество ступенек).
+</p>
+  <div class="kontent">  
+    <figure><img src="assets\images\Глава5\Практика\5_5\image003.jpg" alt="1"></figure>
+  </div>
+  <p>
+    Также добавим на сцену плоскость, которая будет полом.
+  </p>
+  <div class="kontent">  
+    <figure><img src="assets\images\Глава5\Практика\5_5\image004.jpg" alt="1"></figure>
+  </div>
+<p>
+  Добавим на сцену UV Sphere и поместим ее над нашей лестницей. Применим к ней сглаживание Smooth. Так же добавим модификатор Subdivision, со значением Levels Viewport = 3, Render = 3.
+</p>
+  <div class="kontent">  
+    <figure><img src="assets\images\Глава5\Практика\5_5\image005.jpg" alt="1"></figure>
+  </div>
+<p>
+  Для сферы в настройках физики выберем тип Cloth и Collision.<br>
+  Во вкладке Cloth установим Quality Steps = 15.
+</p>
+<div class="kontent">  
+  <figure><img src="assets\images\Глава5\Практика\5_5\image006.jpg" alt="1"></figure>
+</div>
+<p>
+  Во вкладке Stiffness установим Tension = 2, Compression = 2, Shear = 2, Bending = 0.2.
+</p>
+<div class="kontent">  
+  <figure><img src="assets\images\Глава5\Практика\5_5\image007.jpg" alt="1"></figure>
+</div>
+<p>
+  Во вкладке Damping установим Tension = 10, Compression = 10, Shear = 10, Bending = 0.5.
+</p>
+<div class="kontent">  
+  <figure><img src="assets\images\Глава5\Практика\5_5\image008.jpg" alt="1"></figure>
+</div>
+<p>
+  Установим галочку у Pressure и установим значение Pressure = 2.
+</p>
+<div class="kontent">  
+  <figure><img src="assets\images\Глава5\Практика\5_5\image009.jpg" alt="1"></figure>
+</div>
+<p>
+  Во вкладке Cache установим длительность для данного количества ступенек подойдет 600 кадров, установим End = 600 (у вас может быть своя длительность анимации). Также поменяем длительность анимации на 600.
+</p>
+<div class="kontent">  
+  <figure><img src="assets\images\Глава5\Практика\5_5\image010.jpg" alt="1"></figure>
+</div>
+<p>
+  Во вкладке Collision установим Quality = 10. Поставим галочку у Self Collision.
+</p>
+<div class="kontent">  
+  <figure><img src="assets\images\Глава5\Практика\5_5\image011.jpg" alt="1"></figure>
+</div>
+<p>
+  Во вкладке Softbody & Cloth установим Friction = 2.
+</p>
+<div class="kontent">  
+  <figure><img src="assets\images\Глава5\Практика\5_5\image012.jpg" alt="1"></figure>
+</div>
+<p>
+  Для лестницы в настройках физики выберем тип Collision. Во вкладке Softbody & Cloth установим Friction = 2.
+</p>
+<div class="kontent">  
+  <figure><img src="assets\images\Глава5\Практика\5_5\image013.jpg" alt="1"></figure>
+</div>
+<p>
+  Для пола в настройках физики выберем тип Collision.
+</p>
+<div class="kontent">  
+<figure><img src="assets\images\Глава5\Практика\5_5\image014.jpg" alt="1"></figure>
+</div>
+<p>
+  Перейдем к нашей сфере и во вкладке с модификаторами передвинем модификатор Subdivishion в самый низ. Проиграем анимацию и посмотрим промежуточный вариант.
+</p>
+<div class="kontent">  
+<figure><img src="assets\images\Глава5\Практика\5_5\image015.jpg" alt="1"></figure>
+</div>
+<p>
+  Выберем нашу сферу и создадим для нее систему частиц.<br>
+  Тип системы выберем волосы – Hair.<br>
+  Поставим галочку рядом с Advanced.<br>
+  Во вкладке Emission установим следующие значения параметров:<br>
+  Hair Length = 1 m<br>
+  Segments = 8<br>
+</p>
+<div class="kontent">  
+<figure><img src="assets\images\Глава5\Практика\5_5\image016.jpg" alt="1"></figure>
+</div>
+<p>
+  Во вкладке Source уберем галочку у Even Distribution. <br>
+  Во вкладке Hair Dynamics установим галочку.<br>
+  Во вкладке Structure установим Stiffness = 3.
+</p>
+<div class="kontent">  
+  <figure><img src="assets\images\Глава5\Практика\5_5\image017.jpg" alt="1"></figure>
+  </div>
+  <p>
+    Во вкладке Cache установим End = 600.
+  </p>
+  <div class="kontent">  
+    <figure><img src="assets\images\Глава5\Практика\5_5\image018.jpg" alt="1"></figure>
+    </div>
+    <p>
+      Во вкладке Physics – Forces установим Browrian = 0.2
+    </p>
+    <div class="kontent">  
+    <figure><img src="assets\images\Глава5\Практика\5_5\image019.jpg" alt="1"></figure>
+    </div>
+    <p>
+      Во вкладке Children выберем Interpolated. Установим значение параметров Display Amount = 20. Также Clump = 0.8 и Shape = 0,2.
+    </p>
+    <div class="kontent">  
+      <figure><img src="assets\images\Глава5\Практика\5_5\image020.jpg" alt="1"></figure>
+    </div>
+      <p>
+        После настроек всех этих параметров во вкладке Cache нажмем на кнопку Bake All Dynamics.
+      </p>
+      <div class="kontent">  
+        <figure><img src="assets\images\Глава5\Практика\5_5\image021.jpg" alt="1"></figure>
+      </div>
+      <p>
+        Запустим анимацию и посмотрим, как получается.<br>
+        Добавим камеру, настроим ее расположение и сделаем так, чтобы она следила за падающим пушистиком используя ключевые кадры.
+      </p>
+      <div class="kontent">  
+      <figure><img src="assets\images\Глава5\Практика\5_5\image022.jpg" alt="1"></figure>
+      </div>
+      <p>
+        Добавим на нашу сцену ветер и расположим его примерно так, а в настройках физики установим Strength = 10.
+      </p>
+      <div class="kontent">  
+      <figure><img src="assets\images\Глава5\Практика\5_5\image023.jpg" alt="1"></figure>
+      </div>
+      <p>
+        Настроим материал для пушистика, тип материала выберем Principled Hair BSDF и выберем желаемый цвет.
+      </p>
+      <div class="kontent">  
+      <figure><img src="assets\images\Глава5\Практика\5_5\image024.jpg" alt="1"></figure>
+      </div>
+      <p>
+        В настройках мира подключим HDRi карту или настроим окружение по желанию. 
+      </p>
+      <div class="kontent">  
+        <figure><img src="assets\images\Глава5\Практика\5_5\image025.jpg" alt="1"></figure>
+        </div>
+        <p>
+          Настроим освещение, удобно будет использовать тип освящения Area, c Power=300w, Size = 5m.
+        </p>
+        <div class="kontent">  
+          <figure><img src="assets\images\Глава5\Практика\5_5\image026.jpg" alt="1"></figure>
+          </div>
+          <p>
+            Создадим еще одну копию освещения.
+          </p>
+          <div class="kontent">  
+          <figure><img src="assets\images\Глава5\Практика\5_5\image027.jpg" alt="1"></figure>
+          </div>
+<p>
+  Перейдем к настройке рендара, выберем движок Cycles. Настроим рендер в соответствии с мощностью вашего компьютера и отрендерим полученную сцену. (В данном примере во вкладке Film была поставлена галочка у Transparent, установлено значение Max Samples = 256 во вкладке Render).      
+</p>
+          <div class="kontent">  
+            <figure><img src="assets\images\Глава5\Практика\5_5\image028.jpg" alt="1"></figure>
+            </div>
+            <div class="kontent">
+              <figure><img width="768" height="432" src="assets\media\5_5_2.gif" alt="Анимация волос" ></figure>
+              </div>
+
+              <br> 
+              <a href="practik_g5_4.html" > <button> Предыдущая страница</button></a><div class="right"><a href="practik_g5_6.html"><button>Следующая страницы </button></a></div>             
+               </div>
+               </div>
+          
+                <!-- Sidebar -->
+                  <div id="sidebar">
+          
+                    <div class="inner">
+          
+                      <!-- Search Box -->
+                      <section id="search" class="alt">
+                        <form method="get" action="#">
+                          <input type="text" name="search" id="search" placeholder="Поиск..." />
+                        </form>
+                      </section>
+
+ 
+            <!-- Menu -->
+            <nav id="menu">
+              <ul>
+                <li>
+                <span class="opener">Глава 1 <br>«Знакомство с анимацией в Blender»</span>
+                 <ul class="submenu">
+                    <li> <a href="practik_g1_1.html">1. Простая анимация  <input type="checkbox"/></a></li>
+                    <li><a href="practik_g1_2.html">2. Интерполящия ключей  <input type="checkbox"/></a></li>
+                    <li><a href="practik_g1_3.html">3. Отскок (Bounce)  <input type="checkbox"/> </a></li>
+                    <li><a href="practik_g1_4.html">4. Упругость (Elastic)  <input type="checkbox"/></a></li>
+                    <li><a href="practik_g1_5.html">5. Сзади (Back)  <input type="checkbox"/></a></li>
+                    <li><a href="practik_g1_6.html">6. Анимация с помощью драйверов  <input type="checkbox"/></a></li>
+                    <li><a href="practik_g1_7.html">7. Анимация с помощью модификаторов  <input type="checkbox"/></a></li>
+                    <li><a href="practik_g1_8.html">Самостоятельные задания  <input type="checkbox"/></a></li>
+                  </ul>
+                </li>
+                <li>
+                  <span class="opener">Глава 2<br> «Камеры и освещение»</span>
+                  <ul class="submenu">
+                    <li><a href="practik_g2_1.html">1. Анимация камеры  <input type="checkbox"/></a></li>
+                    <li><a href="practik_g2_2.html">2. Слежение  <input type="checkbox"/></a></li>
+                    <li><a href="practik_g2_3.html">3. Переключение камер  <input type="checkbox"/></a></li>
+                    <li><a href="practik_g2_4.html">4. Движение камеры по пути  <input type="checkbox"/></a></li>
+                    <li><a href="practik_g2_5.html">5. Включение/выключение света  <input type="checkbox"/></a></li>
+                    <li><a href="practik_g2_6.html">Самостоятельные задания  <input type="checkbox"/></a></li>
+                  </ul>
+                </li>
+                <li>
+                <span class="opener">Глава 3<br> «Простейшая анимация в Blender»</span>
+                <ul>
+                    <li><a href="practik_g3_1.html">1. Изменение формы  <input type="checkbox"/></a></li>
+                    <li><a href="practik_g3_2.html">2. Анимация захода солнца  <input type="checkbox"/></a></li>
+                    <li><a href="practik_g3_3.html">3. Аудиовизуализация  <input type="checkbox"/></a></li>
+                    <li><a href="practik_g3_4.html">4. Анимация будильника  <input type="checkbox"/></a></li>
+                    <li><a href="practik_g3_5.html">5. Анимация по пути  <input type="checkbox"/></a></li>
+                    <li><a href="practik_g3_6.html">6. Зацикленная абстрактная анимация  <input type="checkbox"/></a></li>
+                    <li><a href="practik_g3_7.html">Самостоятельные задания  <input type="checkbox"/></a></li>
+                </ul>
+              </li>
+              <li>
+                <span class="opener">Глава 4 <br>«Физика в Blender»</span>
+                <ul>
+                  <li><a href="practik_g4_1.html">1. Физика твердых тел  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g4_2.html">2. Физика упругих тел  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g4_3.html">3. Симуляция ткани  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g4_4.html">4. Мятая банка  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g4_5.html">5. Физика водной поверхности  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g4_6.html">6. Физика Metaballs  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g4_7.html">Самостоятельные задания  <input type="checkbox"/></a></li>
+                </ul>
+              </li>
+             
+                <span class="opener">Глава 5<br> «Система частиц»</span>
+                <ul>
+                  <li><a href="practik_g5_1.html">1. Искры  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g5_2.html">2. Фейверк  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g5_3.html">3. Абстрактные частицы  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g5_4.html">4. Particle Physics  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g5_5.html">5. Анимация волос  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g5_6.html">Самостоятельные задания  <input type="checkbox"/></a></li>
+                </ul>
+              </li>
+              <li>
+                <span class="opener">Глава 6 <br>«2D-анимация и Моушн-графика»</span>
+                <ul>
+                  <li><a href="practik_g6_1.html">1. Поп-круг  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g6_2.html">2. Простой моушен текст  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g6_3.html">3. Рукописный текст  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g6_4.html">4. шестиугольники в стиле Motion Graphics  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g6_5.html">5. Ретро анимация в стиле 80-ых  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g6_6.html">6. 2D-мяч  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g6_7.html">Самостоятельные задания  <input type="checkbox"/></a></li>
+                </ul>
+              </li>
+              <li>
+                <span class="opener">Глава 7 <br>«Анимация и спецэффекты текста» </span>
+                <ul>
+                  <li><a href="practik_g7_1.html">1. Анимация и спецэффекты текста  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g7_2.html">2. Неоновый текст  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g7_3.html">3. Жидкий текст  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g7_4.html">4. Глитч эффект  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g7_6.html">Самостоятельные задания  <input type="checkbox"/></a></li>
+                </ul>
+              </li>
+              <li>
+                <span class="opener">Глава 8<br> «Модификаторы, аддоны и ноды»</span>
+                <ul>
+                  <li><a href="practik_g8_1.html">1. Анимация превращения одного объекта в другой  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g8_2.html">2. Эффект силового поля  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g8_3.html">3. NTF  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g8_4.html">4. Cell Fracture  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g8_5.html">5. Build  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g8_6.html">Самостоятельные задания  <input type="checkbox"/></a></li>
+                </ul>
+              </li>
+              <li>
+                <span class="opener">Глава 9<br> «Персонажная анимация»</span>
+                <ul>
+                  <li><a href="practik_g9_1.html">1. Shape keys <input type="checkbox"/></a></li>
+                  <li><a href="practik_g9_2.html">2. Виртуальный скелет  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g9_3.html">3. Инвёрсная кинематика  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g9_4.html">4. Аддон Rigify  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g9_5.html">Самостоятельные задания  <input type="checkbox"/></a></li>
+                </ul>
+              </li>
+              <li>
+                <span class="opener">Глава 10<br> «Трекинг в Blender»</span>
+                <ul>
+                  <li><a href="practik_g10_1.html">1. 3d Camera tracking  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g10_2.html">Самостоятельные задания  <input type="checkbox"/></a></li>
+                </ul>
+              </li>
+              </nav>
+  <a href="https://www.nntu.ru/structure/view/podrazdeleniya/kafedra-graficheskie-informacionnye-sistemy"> <br>© Кафедра ГИС <br> НГТУ им. Р.Е. Алексеева</a> 
+</div>
+
+    <!-- Back to top -->
+    <div class='back-to-top' id='back-to-top' title='Back to top'><i class='fa fa-chevron-up' ></div>
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/transition.js"></script>
+    <script src="assets/js/owl-carousel.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script src="assets/js/back-to-top.js"></script>
+    <script src="assets/js/menu.js"></script>
+
+
+</body>
+
+
+</html>
