@@ -983,6 +983,17 @@ section.buttons .container-fluid {
 
 }
 
+/* Header */
+#header {
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    position: relative;
+    background-color: #3C43C8;
+    margin: -100px -100px 100px -100px;
+}
+
 #header .logo {
     text-align: right;
     display: inline-block;	
@@ -991,21 +1002,19 @@ section.buttons .container-fluid {
     line-height: 100px;
 }
 #header .logo a {
-	font-size: 36px;
+	font-size: 1.5vw;
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	color: #fff;
 	font-weight: 700;
 	margin-right: 70px;
 }
-
 .topnav {
     margin-top:  20px; ;
     margin-left: 100px;
     width: 100%;  
     /*overflow: hidden;*/
 }
-
 /* Style the links inside the navigation bar */
 .topnav a {
     float: left;
@@ -1015,14 +1024,12 @@ section.buttons .container-fluid {
     text-align: center;
     padding: 14px 10px;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 1vw;
     border-bottom: 3px solid transparent;
 }
-
 .topnav a:hover {
     border-bottom: 3px solid #fff;
 }
-
 .topnav a.active {
     border-bottom: 3px solid #fff;
 }
