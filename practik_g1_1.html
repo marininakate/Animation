@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    </script>
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+
+    <title>Информационная система «Анимация и спецэффекты в Blender»</title>
+    <link rel="shortcut icon" href="assets\images\icon_logo.png" type="image/png">
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+
+  </head>
+
+<body class="is-preload">
+
+              <!-- Wrapper -->
+              <div id="wrapper">
+          
+                <!-- Main -->
+                  <div id="main">
+                    <div class="inner">
+          
+                      <!-- Header -->
+                      <header id="header">
+                         <!-- TABS -->
+                        <div class="topnav">
+                          <a href="index.html">Главная</a>
+                          <a href="teorya.html">Теория</a>
+                          <a href="practik_g1_1.html"  class="active">Практика</a>
+                          <a href="test.html">Тестирование</a> 
+                          <a href="ssilki.html">Полезные ссылки</a>
+                         
+                          
+                        </div>
+                      
+                        <div class="logo">
+                          <a href="index.html">Blender</a>
+                        </div>
+                      </header>
+   
+<h3>Урок 1 – Простая анимация</h3>
+
+<p>В результате этого урока должна получиться следующая анимация:</p>
+<div class="kontent">
+  <figure><img width="768" height="432" src="assets\media\1_1.gif" alt="выражения" ></figure>
+  </div>
+  <p>
+    В Blender существует несколько способов анимации. Самый очевидный — анимация при помощи ключевых кадров или кейфреймов (Keyframe). В нижнем окне программы по умолчанию открыт таймлайн — временная линия, на которой можно фиксировать различные параметры объектов в виде ключевых кадров.
+  </p>
+  <p>Открываем блендер. Создаем новый файл. Добавляем на сцену куб.</p>
+  <div class="kontent">  
+    <figure><img src="assets\images\Глава1\Практика\1_1\1.png" alt="1"></figure>
+  </div>
+<p>На timeline перемещаемся на 1 кадр. </p>
+  <div class="kontent">  
+    <figure><img src="assets\images\Глава1\Практика\1_1\2.png" alt="1"></figure>
+  </div>
+<p>
+  Нажимаем на клавиатуре на клавишу «I» (или клавишу K, это зависит от вашей версии блендера и настроек, которые вы можете посмотреть во вкладке Edit -> Preferences -> Keymap и посмотреть какое сочетание клавиш стоит у Keyframe. Также можно кликнуть правой кнопкой мыши и выбрать в появившемся меню необходимую команду), высвечивается контекстное меню и выбираем ключ «location, Rotation & Scale» (Перемещение, поворот и масштабирование).
+</p>
+  <div class="kontent">  
+    <figure><img src="assets\images\Глава1\Практика\1_1\3.png" alt="1"></figure>
+  </div>
+  <p>После этого у нас в 1 кадре появится ключ на timeline.
+  </p>
+  <div class="kontent">  
+    <figure><img src="assets\images\Глава1\Практика\1_1\4.png" alt="1"></figure>
+  </div>
+<p>
+  Затем переместимся в 60 кадр, сдвинем наш куб по оси Х на -10, повернем его по оси У на -60 градусов и изменим масштаб увеличив в 1,5 раза. После этого поставим ключ аналогично. Нажимаем на клавиатуре на клавишу «I», высвечивается контекстное меню и выбираем ключ «location, Rotation & Scale» (Перемещение, поворот и масштабирование). На 60 кадре появился ключ.
+</p>
+  <div class="kontent">  
+    <figure><img src="assets\images\Глава1\Практика\1_1\5.png" alt="1"></figure>
+  </div>
+<p>
+Воспроизведем анимацию и увидим, как у нас появилась анимация движения, вращения и изменения масштаба у куба.
+Также можно анимировать и ставить ключевые кадры функциям. Добавим изменение цвета нашему кубу.<br>
+Для этого выберем куб, перейдем во вкладку Material – Viewport Displlay.<br>
+Подводим курсор на цвет и ставим ключ при помощи клавищи «I» в 1 кадре.
+</p>
+  <div class="kontent">  
+    <figure><img src="assets\images\Глава1\Практика\1_1\6.png" alt="1"></figure>
+  </div>
+  <p>
+  Затем перемастимся на 30 кадр, изменим цвет, например, на зеленый.
+  </p>
+  <div class="kontent">  
+    <figure><img src="assets\images\Глава1\Практика\1_1\7.png" alt="1"></figure>
+  </div>
+  <p>
+  Аналогичным образом поставим ключ при помощи клавиши «I» в 30 кадре.
+  </p>
+  <div class="kontent">  
+    <figure><img src="assets\images\Глава1\Практика\1_1\8.png" alt="1"></figure>
+  </div>
+  <p>
+  Используя полученные навыки добавим еще одно перемещение, вращение и изменения масштаба для нашего куба в 110 кадр, также изменим цвет.
+  </p>
+  <div class="kontent">  
+    <figure><img src="assets\images\Глава1\Практика\1_1\9.png" alt="1"></figure>
+  </div>
+  <p>
+  Повторим аналогичные действия в 180 кадре.
+  </p>
+  <div class="kontent">  
+    <figure><img src="assets\images\Глава1\Практика\1_1\10.png" alt="1"></figure>
+  </div>
+  <p>
+    Вернем куб в исходное состояние в 240 кадре и аналогично поставим ключи.
+  </p>
+  <div class="kontent">  
+    <figure><img src="assets\images\Глава1\Практика\1_1\11.png" alt="1"></figure>
+  </div>
+  <p>
+    Сохраним полученную анимацию.
+   Настроим освещение, расположение камеры и отрендерим полученный результат.  
+  </p>
+
+<br> 
+<div class="right"><a href="practik_g1_2.html"><button>Следующая страницы</button></a></div> 
+                  
+ </div>
+ </div>
+          
+                <!-- Sidebar -->
+                  <div id="sidebar">
+          
+                    <div class="inner">
+          
+                      <!-- Search Box -->
+                      <section id="search" class="alt">
+                        <form method="get" action="#">
+                          <input type="text" name="search" id="search" placeholder="Поиск..." />
+                        </form>
+                      </section>
+
+ 
+            <!-- Menu -->
+            <nav id="menu">
+              <ul>
+                
+                <span class="opener">Глава 1 <br>«Знакомство с анимацией в Blender»</span>
+                 <ul class="submenu">
+                    <li> <a href="practik_g1_1.html">1. Простая анимация  <input type="checkbox"/></a></li>
+                    <li><a href="practik_g1_2.html">2. Интерполящия ключей  <input type="checkbox"/></a></li>
+                    <li><a href="practik_g1_3.html">3. Отскок (Bounce)  <input type="checkbox"/> </a></li>
+                    <li><a href="practik_g1_4.html">4. Упругость (Elastic)  <input type="checkbox"/></a></li>
+                    <li><a href="practik_g1_5.html">5. Сзади (Back)  <input type="checkbox"/></a></li>
+                    <li><a href="practik_g1_6.html">6. Анимация с помощью драйверов  <input type="checkbox"/></a></li>
+                    <li><a href="practik_g1_7.html">7. Анимация с помощью модификаторов  <input type="checkbox"/></a></li>
+                    <li><a href="practik_g1_8.html">Самостоятельные задания  <input type="checkbox"/></a></li>
+                  </ul>
+                </li>
+                <li>
+                  <span class="opener">Глава 2<br> «Камеры и освещение»</span>
+                  <ul class="submenu">
+                    <li><a href="practik_g2_1.html">1. Анимация камеры  <input type="checkbox"/></a></li>
+                    <li><a href="practik_g2_2.html">2. Слежение  <input type="checkbox"/></a></li>
+                    <li><a href="practik_g2_3.html">3. Переключение камер  <input type="checkbox"/></a></li>
+                    <li><a href="practik_g2_4.html">4. Движение камеры по пути  <input type="checkbox"/></a></li>
+                    <li><a href="practik_g2_5.html">5. Включение/выключение света  <input type="checkbox"/></a></li>
+                    <li><a href="practik_g2_6.html">Самостоятельные задания  <input type="checkbox"/></a></li>
+                  </ul>
+                </li>
+                <li>
+                <span class="opener">Глава 3<br> «Простейшая анимация в Blender»</span>
+                <ul>
+                    <li><a href="practik_g3_1.html">1. Изменение формы  <input type="checkbox"/></a></li>
+                    <li><a href="practik_g3_2.html">2. Анимация захода солнца  <input type="checkbox"/></a></li>
+                    <li><a href="practik_g3_3.html">3. Аудиовизуализация  <input type="checkbox"/></a></li>
+                    <li><a href="practik_g3_4.html">4. Анимация будильника  <input type="checkbox"/></a></li>
+                    <li><a href="practik_g3_5.html">5. Анимация по пути  <input type="checkbox"/></a></li>
+                    <li><a href="practik_g3_6.html">6. Зацикленная абстрактная анимация  <input type="checkbox"/></a></li>
+                    <li><a href="practik_g3_7.html">Самостоятельные задания  <input type="checkbox"/></a></li>
+                </ul>
+              </li>
+              <li>
+                <span class="opener">Глава 4 <br>«Физика в Blender»</span>
+                <ul>
+                  <li><a href="practik_g4_1.html">1. Физика твердых тел  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g4_2.html">2. Физика упругих тел  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g4_3.html">3. Симуляция ткани  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g4_4.html">4. Мятая банка  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g4_5.html">5. Физика водной поверхности  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g4_6.html">6. Физика Metaballs  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g4_7.html">Самостоятельные задания  <input type="checkbox"/></a></li>
+                </ul>
+              </li>
+              <li>
+                <span class="opener">Глава 5<br> «Система частиц»</span>
+                <ul>
+                  <li><a href="practik_g5_1.html">1. Искры  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g5_2.html">2. Фейверк  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g5_3.html">3. Абстрактные частицы  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g5_4.html">4. Particle Physics  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g5_5.html">5. Анимация волос  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g5_6.html">Самостоятельные задания  <input type="checkbox"/></a></li>
+                </ul>
+              </li>
+              <li>
+                <span class="opener">Глава 6 <br>«2D-анимация и Моушн-графика»</span>
+                <ul>
+                  <li><a href="practik_g6_1.html">1. Поп-круг  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g6_2.html">2. Простой моушен текст  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g6_3.html">3. Рукописный текст  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g6_4.html">4. шестиугольники в стиле Motion Graphics  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g6_5.html">5. Ретро анимация в стиле 80-ых  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g6_6.html">6. 2D-мяч  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g6_7.html">Самостоятельные задания  <input type="checkbox"/></a></li>
+                </ul>
+              </li>
+              <li>
+                <span class="opener">Глава 7 <br>«Анимация и спецэффекты текста» </span>
+                <ul>
+                  <li><a href="practik_g7_1.html">1. Анимация и спецэффекты текста  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g7_2.html">2. Неоновый текст  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g7_3.html">3. Жидкий текст  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g7_4.html">4. Глитч эффект  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g7_5.html">Самостоятельные задания  <input type="checkbox"/></a></li>
+                </ul>
+              </li>
+              <li>
+                <span class="opener">Глава 8<br> «Модификаторы, аддоны и ноды»</span>
+                <ul>
+                  <li><a href="practik_g8_1.html">1. Анимация превращения одного объекта в другой  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g8_2.html">2. Эффект силового поля  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g8_3.html">3. NTF  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g8_4.html">4. Cell Fracture  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g8_5.html">5. Build  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g8_6.html">Самостоятельные задания  <input type="checkbox"/></a></li>
+                </ul>
+              </li>
+              <li>
+                <span class="opener">Глава 9<br> «Персонажная анимация»</span>
+                <ul>
+                  <li><a href="practik_g9_1.html">1. Shape keys <input type="checkbox"/></a></li>
+                  <li><a href="practik_g9_2.html">2. Виртуальный скелет  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g9_3.html">3. Инвёрсная кинематика  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g9_4.html">4. Адон Rigify  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g9_5.html">Самостоятельные задания  <input type="checkbox"/></a></li>
+                </ul>
+              </li>
+              <li>
+                <span class="opener">Глава 10<br> «Трекинг в Blender»</span>
+                <ul>
+                  <li><a href="practik_g10_1.html">1. 3d Camera tracking  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g10_2.html">Самостоятельные задания  <input type="checkbox"/></a></li>
+                </ul>
+              </li>
+              </nav>
+  <a href="https://www.nntu.ru/structure/view/podrazdeleniya/kafedra-graficheskie-informacionnye-sistemy"> <br>© Кафедра ГИС <br> НГТУ им. Р.Е. Алексеева</a> 
+</div>
+
+    <!-- Back to top -->
+    <div class='back-to-top' id='back-to-top' title='Back to top'><i class='fa fa-chevron-up' ></div>
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/transition.js"></script>
+    <script src="assets/js/owl-carousel.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script src="assets/js/back-to-top.js"></script>
+    <script src="assets/js/menu.js"></script>
+    <script src="assets/js/checkbox.js"></script>
+
+
+</body>
+
+
+</html>

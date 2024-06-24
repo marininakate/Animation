@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    </script>
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+
+    <title>Информационная система «Анимация и спецэффекты в Blender»</title>
+    <link rel="shortcut icon" href="assets\images\icon_logo.png" type="image/png">
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+
+  </head>
+
+<body class="is-preload">
+
+              <!-- Wrapper -->
+              <div id="wrapper">
+          
+                <!-- Main -->
+                  <div id="main">
+                    <div class="inner">
+          
+                      <!-- Header -->
+                      <header id="header">
+                         <!-- TABS -->
+                        <div class="topnav">
+                          <a href="index.html">Главная</a>
+                          <a href="teorya_g6_1.html">Теория</a>
+                          <a href="practik_g6_6.html"  class="active">Практика</a>
+                          <a href="test.html">Тестирование</a> 
+                          <a href="ssilki.html">Полезные ссылки</a>
+                          
+                        </div>
+                      
+                        <div class="logo">
+                          <a href="index.html">Blender</a>
+                        </div>
+                      </header>
+   
+<h3>Урок 6 – 2D-мяч</h3>
+
+<p>В результате этого урока должна получиться следующая анимация:</p>
+<div class="kontent">
+  <figure><img width="768" height="432" src="assets\media\6_6.gif" alt="Анимация изменения формы" ></figure>
+  </div>
+<p>
+  <b>
+    Немного теории:
+  </b>
+</p>
+  <p>
+    Blender известен тем, что отлично подходит для 3D, но знаете ли вы, что он также великолепен для 2D-анимации? Это относительно новая функция, представленная в Blender 2.8, и она включает в себя ряд уникальных функций и инструментов, которые очень хорошо работают для создания 2D-анимации.
+    Создайте новый файл 2D-анимации, выбрав его во вступительном окне. Вы также можете перейти в  Файл > Создать > 2D-анимация.    
+  </p>
+  <p>
+    Это будет основной режим, который вы будете использовать при создании рисунков и анимации.
+  </p>
+  <div class="kontent">  
+    <figure><img src="assets\images\Глава6\Практика\6_6\image001.jpg" alt="1"></figure>
+  </div>
+<p>
+  Большую часть рисунка мы создадим в режиме рисования Draw Mode. Это единственный режим, позволяющий создавать 2D-обводки. Уже созданные штрихи нельзя выбрать в режиме рисования. Если вы хотите редактировать обводки, вместо этого вы должны использовать режим редактирования Edit Mode или режим скульптуры Sculpt Mode.
+</p>
+  <div class="kontent">  
+    <figure><img src="assets\images\Глава6\Практика\6_6\image002.jpg" alt="1"></figure>
+  </div>
+<p>
+  Grease Pencil — это основной инструмент, который вы используется в Blender для создания 2D-анимации, и позволяет рисовать в 3D-пространстве. 
+</p>
+<p>
+  Blender настоятельно рекомендует использовать планшет или сенсорный дисплей при использовании этого инструмента.
+</p>
+<p>
+  Чтобы создать новый объект Grease Pencil, сначала необходимо перейти в режим Object Mode, выбрав его в раскрывающемся меню в левом верхнем углу.
+</p>
+
+  <div class="kontent">  
+    <figure><img src="assets\images\Глава6\Практика\6_6\image003.jpg" alt="1"></figure>
+  </div>
+  <p>
+    Затем перейдите в Add - Grease Pencil, чтобы увидеть несколько различных вариантов на выбор.<br>
+    Blank (пусто): создает нулевой объект «Grease Pencil».<br>
+    Stroke (обводка): создание примера стилизованной демонстрации обводки.<br>
+    Monkey: Создает пример лица обезьяны.
+  </p>
+  <div class="kontent">  
+    <figure><img src="assets\images\Глава6\Практика\6_6\image004.jpg" alt="1"></figure>
+  </div>
+<p>
+  Создайте пустой объект Grease Pencil, а затем вернитесь в рабочую область 2D-анимации, чтобы вернуться в режим рисования. 
+</p>
+  <div class="kontent">  
+    <figure><img src="assets\images\Глава6\Практика\6_6\image005.jpg" alt="1"></figure>
+  </div>
+<p>
+  Слева вы найдете все основные инструменты, в том числе инструмент «Рисование», инструмент «Заливка», инструмент «Ластик» и т. д. 
+</p>
+<div class="kontent">  
+  <figure><img src="assets\images\Глава6\Практика\6_6\image006.jpg" alt="1"></figure>
+</div>
+<p>
+  Базовый инструмент рисования будет включать все основные настройки, такие как мазок кисти и цвет, которые вы можете настроить в правой части экрана. 
+</p>
+<div class="kontent">  
+  <figure><img src="assets\images\Глава6\Практика\6_6\image007.jpg" alt="1"></figure>
+</div>
+<p>
+  Выбрав Draw Tool, вы можете изменить кисть, щелкнув значок карандаша, расположенный в верхней строке меню.
+</p>
+<div class="kontent">  
+  <figure><img src="assets\images\Глава6\Практика\6_6\image008.jpg" alt="1"></figure>
+</div>
+<p>
+  В верхней панели у вас также есть другие возможности изменить основные настройки инструмента «Рисование», такие как цвет, радиус, сила и т. д.
+  <br>Эти настройки также доступны в правой части экрана в разделе Active Tool & Workspace Settings.
+  
+</p>
+<div class="kontent">  
+  <figure><img src="assets\images\Глава6\Практика\6_6\image009.jpg" alt="1"></figure>
+</div>
+<p>
+  Чтобы использовать инструмент Draw Tool просто щелкните и перетащите его, как если бы вы использовали любое другое программное обеспечение для редактирования фотографий. Штрихи жирным карандашом в Blender являются 2D, но они существуют как 3D-объект.
+  Закончив рисование, вы можете редактировать эти штрихи дальше, перейдя в режим редактирования Edit Mode.
+  
+</p>
+<div class="kontent">  
+  <figure><img src="assets\images\Глава6\Практика\6_6\image010.jpg" alt="1"></figure>
+</div>
+<p>
+  В Blender объект Grease Pencil можно анимировать следующими способами:<br>
+  •	Inherited Animation (унаследованная анимация): использование движения другого объекта в качестве родительского.<br>
+  •	Moving as a Whole Object (перемещение всего объекта): изменение положения, ориентации или размера<br>
+  •	Deforming (деформация): анимация их точек<br>
+  •	Drawing Frame by Frame (рисование покадрово): рисование по одному кадру за раз, как в традиционной анимации.
+</p>
+<p>
+  <b>
+    Создание анимации:
+  </b>
+</p>
+<p>
+  Чтобы запустить новую анимацию, выберите File > New > 2D Animation чтобы создать новый шаблон анимации. В этом шаблоне уже должен быть создан объект Grease Pencil и включены автоматические ключевые кадры.
+  Нарисуйте шар и назовите его «Ball». Если хотите, вы также можете использовать для этого инструмент Circle Tool. Чтобы получить идеальный круг, вы можете нажать клавишу Shift, щелкая и перетаскивая.   
+</p>
+<div class="kontent">  
+  <figure><img src="assets\images\Глава6\Практика\6_6\image011.jpg" alt="1"></figure>
+</div>
+<p>
+  Как только вы будете довольны формой, нажмите Enter на клавиатуре. Это создаст объект Grease Pencil и добавит ключевой кадр на временную шкалу. 
+  Вы также можете удалить заливку Fills, поскольку в этом уроке мы будем использовать только линии.  
+</p>
+<div class="kontent">  
+  <figure><img src="assets\images\Глава6\Практика\6_6\image012.jpg" alt="1"></figure>
+</div>
+<p>
+  Создайте новый объект Grease Pencil для пола, перейдя в Object Mode, а затем выберите Add > Grease Pencil > Blank.  Переименуйте его в «Floor», а затем нарисуйте пол в режиме рисования. 
+</p>
+<div class="kontent">  
+  <figure><img src="assets\images\Глава6\Практика\6_6\image013.jpg" alt="1"></figure>
+</div>
+<p>
+  Используйте тот же процесс, чтобы нарисовать траекторию движения прыгающего мяча. Вы можете переименовать этот объект Grease Pencil в «PathGuide». Мы будем использовать это в качестве руководства для анимации вашего мяча.
+</p>
+<div class="kontent">  
+<figure><img src="assets\images\Глава6\Практика\6_6\image014.jpg" alt="1"></figure>
+</div>
+<p>
+  Перейдите в Edit Mode и переместите мяч в начало вашего пути.
+</p>
+<div class="kontent">  
+  <figure><img src="assets\images\Глава6\Практика\6_6\image015.jpg" alt="1"></figure>
+  </div>
+  <p>
+    Выделите ключевой кадр для мяча и продублируйте его, нажав Shift+D. Затем переместите ключевой кадр вперед примерно на 10 кадров.
+  </p>
+  <div class="kontent">  
+    <figure><img src="assets\images\Глава6\Практика\6_6\image016.jpg" alt="1"></figure>
+    </div>
+    <p>
+      Сделайте это 6 раз, чтобы мяч отскочил 3 раза. Измените конечный кадр анимации, чтобы он заканчивался одновременно с последним ключевым кадром.
+    </p>
+    <div class="kontent">  
+      <figure><img src="assets\images\Глава6\Практика\6_6\image017.jpg" alt="1"></figure>
+      </div>
+      <p>
+        Перейдите в Edit Mode и переместите временную шкалу вперед к следующему ключевому кадру. Затем переместите мяч туда, где вы хотите, чтобы он находился в данный момент.
+      </p>
+      <div class="kontent">  
+        <figure><img src="assets\images\Глава6\Практика\6_6\image018.jpg" alt="1"></figure>
+        </div>
+        <p>
+          Повторяйте шаги для каждого ключевого кадра, пока не дойдете до конца анимации.
+        </p>
+        <div class="kontent">  
+          <figure><img src="assets\images\Глава6\Практика\6_6\image019.jpg" alt="1"></figure>
+          </div>
+          <p>
+            Теперь, если вы нажмете кнопку предварительного просмотра, вы увидите, что теперь у нас есть базовая анимация! 
+            <br>Чтобы сделать анимацию более плавной, вам нужно заполнить пространство между каждым из текущих ключевых кадров новыми ключевыми кадрами. Поэтому повторите тот же процесс, что и раньше, чтобы заполнить недостающие ключевые кадры.
+            
+          </p>
+          <div class="kontent">  
+            <figure><img src="assets\images\Глава6\Практика\6_6\image020.jpg" alt="1"></figure>
+            </div>
+            <p>
+              Затем вы можете организовать свои ключевые кадры. Выберите ключевые кадры-заполнители, нажмите R на клавиатуре и выберите Breakdown, чтобы теперь вы могли увидеть визуальную разницу для разных типов ключевых кадров.
+            </p>
+            <div class="kontent">  
+              <figure><img src="assets\images\Глава6\Практика\6_6\image021.jpg" alt="1"></figure>
+              </div>
+              <p>
+                Добавьте некоторые окончательные настройки для каждого кадра, например, «сжатие» и «растягивание» формы шара, чтобы улучшить внешний вид анимации.
+              </p>
+              <div class="kontent">  
+                <figure><img src="assets\images\Глава6\Практика\6_6\image022.jpg" alt="1"></figure>
+                </div>
+                <p>
+                  Отрендерим полученный результат. 
+                </p>
+                <br> 
+                <a href="practik_g6_5.html" > <button> Предыдущая страница</button></a><div class="right"><a href="practik_g6_7.html"><button>Следующая страницы </button></a></div>             
+                 </div>
+                 </div>
+          
+                <!-- Sidebar -->
+                  <div id="sidebar">
+          
+                    <div class="inner">
+          
+                      <!-- Search Box -->
+                      <section id="search" class="alt">
+                        <form method="get" action="#">
+                          <input type="text" name="search" id="search" placeholder="Поиск..." />
+                        </form>
+                      </section>
+
+ 
+            <!-- Menu -->
+            <nav id="menu">
+              <ul>
+                <li>
+                <span class="opener">Глава 1 <br>«Знакомство с анимацией в Blender»</span>
+                 <ul class="submenu">
+                    <li> <a href="practik_g1_1.html">1. Простая анимация  <input type="checkbox"/></a></li>
+                    <li><a href="practik_g1_2.html">2. Интерполящия ключей  <input type="checkbox"/></a></li>
+                    <li><a href="practik_g1_3.html">3. Отскок (Bounce)  <input type="checkbox"/> </a></li>
+                    <li><a href="practik_g1_4.html">4. Упругость (Elastic)  <input type="checkbox"/></a></li>
+                    <li><a href="practik_g1_5.html">5. Сзади (Back)  <input type="checkbox"/></a></li>
+                    <li><a href="practik_g1_6.html">6. Анимация с помощью драйверов  <input type="checkbox"/></a></li>
+                    <li><a href="practik_g1_7.html">7. Анимация с помощью модификаторов  <input type="checkbox"/></a></li>
+                    <li><a href="practik_g1_8.html">Самостоятельные задания  <input type="checkbox"/></a></li>
+                  </ul>
+                </li>
+                <li>
+                  <span class="opener">Глава 2<br> «Камеры и освещение»</span>
+                  <ul class="submenu">
+                    <li><a href="practik_g2_1.html">1. Анимация камеры  <input type="checkbox"/></a></li>
+                    <li><a href="practik_g2_2.html">2. Слежение  <input type="checkbox"/></a></li>
+                    <li><a href="practik_g2_3.html">3. Переключение камер  <input type="checkbox"/></a></li>
+                    <li><a href="practik_g2_4.html">4. Движение камеры по пути  <input type="checkbox"/></a></li>
+                    <li><a href="practik_g2_5.html">5. Включение/выключение света  <input type="checkbox"/></a></li>
+                    <li><a href="practik_g2_6.html">Самостоятельные задания  <input type="checkbox"/></a></li>
+                  </ul>
+                </li>
+                <li>
+                <span class="opener">Глава 3<br> «Простейшая анимация в Blender»</span>
+                <ul>
+                    <li><a href="practik_g3_1.html">1. Изменение формы  <input type="checkbox"/></a></li>
+                    <li><a href="practik_g3_2.html">2. Анимация захода солнца  <input type="checkbox"/></a></li>
+                    <li><a href="practik_g3_3.html">3. Аудиовизуализация  <input type="checkbox"/></a></li>
+                    <li><a href="practik_g3_4.html">4. Анимация будильника  <input type="checkbox"/></a></li>
+                    <li><a href="practik_g3_5.html">5. Анимация по пути  <input type="checkbox"/></a></li>
+                    <li><a href="practik_g3_6.html">6. Зацикленная абстрактная анимация  <input type="checkbox"/></a></li>
+                    <li><a href="practik_g3_7.html">Самостоятельные задания  <input type="checkbox"/></a></li>
+                </ul>
+              </li>
+              <li>
+                <span class="opener">Глава 4 <br>«Физика в Blender»</span>
+                <ul>
+                  <li><a href="practik_g4_1.html">1. Физика твердых тел  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g4_2.html">2. Физика упругих тел  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g4_3.html">3. Симуляция ткани  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g4_4.html">4. Мятая банка  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g4_5.html">5. Физика водной поверхности  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g4_6.html">6. Физика Metaballs  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g4_7.html">Самостоятельные задания  <input type="checkbox"/></a></li>
+                </ul>
+              </li>
+              <li>
+                <span class="opener">Глава 5<br> «Система частиц»</span>
+                <ul>
+                  <li><a href="practik_g5_1.html">1. Искры  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g5_2.html">2. Фейверк  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g5_3.html">3. Абстрактные частицы  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g5_4.html">4. Particle Physics  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g5_5.html">5. Анимация волос  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g5_6.html">Самостоятельные задания  <input type="checkbox"/></a></li>
+                </ul>
+              </li>
+              
+                <span class="opener">Глава 6 <br>«2D-анимация и Моушн-графика»</span>
+                <ul>
+                  <li><a href="practik_g6_1.html">1. Поп-круг  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g6_2.html">2. Простой моушен текст  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g6_3.html">3. Рукописный текст  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g6_4.html">4. шестиугольники в стиле Motion Graphics  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g6_5.html">5. Ретро анимация в стиле 80-ых  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g6_6.html">6. 2D-мяч  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g6_7.html">Самостоятельные задания  <input type="checkbox"/></a></li>
+                </ul>
+              </li>
+              <li>
+                <span class="opener">Глава 7 <br>«Анимация и спецэффекты текста» </span>
+                <ul>
+                  <li><a href="practik_g7_1.html">1. Анимация и спецэффекты текста  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g7_2.html">2. Неоновый текст  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g7_3.html">3. Жидкий текст  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g7_4.html">4. Глитч эффект  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g7_5.html">Самостоятельные задания  <input type="checkbox"/></a></li>
+                </ul>
+              </li>
+              <li>
+                <span class="opener">Глава 8<br> «Модификаторы, аддоны и ноды»</span>
+                <ul>
+                  <li><a href="practik_g8_1.html">1. Анимация превращения одного объекта в другой  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g8_2.html">2. Эффект силового поля  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g8_3.html">3. NTF  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g8_4.html">4. Cell Fracture  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g8_5.html">5. Build  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g8_6.html">Самостоятельные задания  <input type="checkbox"/></a></li>
+                </ul>
+              </li>
+              <li>
+                <span class="opener">Глава 9<br> «Персонажная анимация»</span>
+                <ul>
+                  <li><a href="practik_g9_1.html">1. Shape keys <input type="checkbox"/></a></li>
+                  <li><a href="practik_g9_2.html">2. Виртуальный скелет  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g9_3.html">3. Инвёрсная кинематика  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g9_4.html">4. Аддон Rigify  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g9_5.html">Самостоятельные задания  <input type="checkbox"/></a></li>
+                </ul>
+              </li>
+              <li>
+                <span class="opener">Глава 10<br> «Трекинг в Blender»</span>
+                <ul>
+                  <li><a href="practik_g10_1.html">1. 3d Camera tracking  <input type="checkbox"/></a></li>
+                  <li><a href="practik_g10_2.html">Самостоятельные задания  <input type="checkbox"/></a></li>
+                </ul>
+              </li>
+              </nav>
+  <a href="https://www.nntu.ru/structure/view/podrazdeleniya/kafedra-graficheskie-informacionnye-sistemy"> <br>© Кафедра ГИС <br> НГТУ им. Р.Е. Алексеева</a> 
+</div>
+
+    <!-- Back to top -->
+    <div class='back-to-top' id='back-to-top' title='Back to top'><i class='fa fa-chevron-up' ></div>
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/transition.js"></script>
+    <script src="assets/js/owl-carousel.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script src="assets/js/back-to-top.js"></script>
+    <script src="assets/js/menu.js"></script>
+    <script src="assets/js/checkbox.js"></script>
+
+</body>
+
+
+</html>
