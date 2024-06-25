@@ -987,8 +987,8 @@ section.buttons .container-fluid {
 #header {
     display: -moz-flex;
     display: -webkit-flex;
-    display: -ms-flex;
     display: flex;
+    flex-direction: row;
     position: relative;
     background-color: #3C43C8;
     margin: -100px -100px 100px -100px;
@@ -1002,7 +1002,7 @@ section.buttons .container-fluid {
     line-height: 100px;
 }
 #header .logo a {
-	font-size: 1.5vw;
+	font-size: calc(18px + 11 * (80vw / 1280));
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	color: #fff;
@@ -1024,7 +1024,7 @@ section.buttons .container-fluid {
     text-align: center;
     padding: 14px 10px;
     text-decoration: none;
-    font-size: 1vw;
+    font-size:  calc(8px + 8 * (80vw / 1280));
     border-bottom: 3px solid transparent;
 }
 .topnav a:hover {
@@ -1033,7 +1033,6 @@ section.buttons .container-fluid {
 .topnav a.active {
     border-bottom: 3px solid #fff;
 }
-
 
 /* Footer */
 #footer  {
